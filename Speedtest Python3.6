@@ -1,0 +1,23 @@
+'''
+Install:
+$ pip3 install speedtest-cli
+'''
+
+import speed
+
+C:\Users\Administrator>py -3.6
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import speedtest
+>>> test = speedtest.Test()
+>>> test = speedtest.Speedtest()
+>>> download = test.download()
+>>> upload = test.upload()
+>>>
+>>> print('download speed : ', download)
+download speed :  189455.97042784718
+>>> print('upload speed : ', upload)
+upload speed :  244574.52003463826
+>>>
+
+
