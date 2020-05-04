@@ -1,0 +1,171 @@
+'''
+Note : allow less secure apps to send email in your gmail settings to send email wit python
+
+'''
+from tkinter import *
+# import Tkinter as tk ; 
+import time
+import threading # caller
+root=Tk() 
+root.title('Vishal Singh - Sorting Visualization')
+ht='750' ; wd='650'
+geo = ht+'x'+wd + '+' + '350'+ '+' + '10'
+print( geo)
+root.geometry(geo)
+#input
+# ************** input array ************************* 
+# sEmailVar = StringVar()
+# sPassVar = StringVar()
+# sMsgVar = StringVar()
+# rEmailVar = StringVar()
+#se
+Label(root, text="Senders Email", font='timesnewroman 15', padx=5).grid(row=0, column=0, columnspan=3)                                      
+sEmailVar = StringVar()
+sEmailVar.set('vishal7x7@gmail.com')
+entry1 = Entry(root, textvar=sEmailVar, font='timesnewroman 15',
+    fg='dark green',  bd=2)
+entry1.grid(row=0, column=4, columnspan=3,  pady=20)
+#sp
+Label(root, text="Password", font='timesnewroman 15').grid(row=0, column=7, columnspan=3)
+sPassVar = StringVar()
+sPassVar.set('Maxeffort@21')
+entry1 = Entry(root, textvar=sPassVar, font='timesnewroman 15',
+    fg='dark green',  bd=2)
+entry1.grid(row=0, column=10, columnspan=3,  pady=20)
+#re
+Label(root, text="Receivers Email", font='timesnewroman 15', padx=5).grid(row=2, column=0, columnspan=3)  
+rEmailVar = StringVar()
+rEmailVar.set('vishal7x7@gmail.com')
+entry1 = Entry(root, textvar=rEmailVar, font='timesnewroman 15',
+    fg='dark green',  bd=2, width=50)
+entry1.grid(row=2, column=4, columnspan=9,  pady=20)
+#sub
+Label(root, text="Subject", font='timesnewroman 15', padx=5).grid(row=4, column=0, columnspan=3)  
+sSubVar = StringVar()
+sSubVar.set('Important message for website')
+entry1 = Entry(root, textvar=sSubVar, font='timesnewroman 15',
+    fg='dark green',  bd=2, width=50)
+entry1.grid(row=4, column=4, columnspan=9,  pady=20)
+#body
+Label(root, text="Message", font='timesnewroman 15', padx=5).grid(row=6, column=0, columnspan=3)  
+sMsgVar = StringVar()
+sMsgVar.set('okay we have to improve the UI/UX and deploy it!!!!')
+entry1 = Entry(root, textvar=sMsgVar, font='timesnewroman 15',
+    fg='dark green',  bd=2, width=50)
+entry1.grid(row=6, column=4, columnspan=9,  pady=20)
+#file picker
+from tkinter import filedialog
+fileVar = StringVar()
+def file_picker():
+    root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("pdf files","*.pdf"),("all files","*.*")))
+    print (root.filename)
+    fileVar.set(root.filename) 
+    return root.filename
+Label(root, text="Attatch File", font='timesnewroman 15', padx=5).grid(row=8, column=0, columnspan=3)  
+b=Button(root, text='Attatch File', command=lambda : file_picker(), font='timesnewroman 10 bold', 
+         fg='dark green', relief=RAISED, bd=5, width=20)
+b.grid(row=8, column=3, columnspan=3, ipadx=20,  pady=0)
+
+filenameVar = StringVar() ; filenameVar.set('attatched file')
+entry1 = Entry(root, textvar=filenameVar, font='timesnewroman 15',
+    fg='dark green',  bd=2, width=30)
+entry1.grid(row=8, column=7, columnspan=6,  pady=20)
+
+entry1 = Entry(root, textvar=fileVar, font='timesnewroman 15',
+    fg='dark green',  bd=2, width=50)
+entry1.grid(row=10, column=3, columnspan=12,  pady=20)
+
+'''
+email code
+'''
+import smtplib 
+def send_email():
+    # Python code to illustrate Sending mail with attachments 
+    # from your Gmail account 
+
+    # libraries to be imported 
+    import smtplib 
+    from email.mime.multipart import MIMEMultipart 
+    from email.mime.text import MIMEText 
+    from email.mime.base import MIMEBase 
+    from email import encoders 
+
+    fromaddr = sEmailVar.get()
+    toaddr = rEmailVar.get() ; print(toaddr)
+    # instance of MIMEMultipart 
+    msg = MIMEMultipart() 
+
+    # storing the senders email address 
+    msg['From'] = fromaddr 
+
+    # storing the receivers email address 
+    msg['To'] = toaddr 
+    
+
+    # storing the subject 
+    
+    msg['Subject'] = sSubVar.get()
+
+    # string to store the body of the mail 
+    body = sMsgVar.get()
+
+    # attach the body with the msg instance 
+    msg.attach(MIMEText(body, 'plain')) 
+
+    # open the file to be sent 
+    filename = filenameVar.get()
+    attachment = open(fileVar.get(), "rb") 
+
+    # instance of MIMEBase and named as p 
+    p = MIMEBase('application', 'octet-stream') 
+
+    # To change the payload into encoded form 
+    p.set_payload((attachment).read()) 
+
+    # encode into base64 
+    encoders.encode_base64(p) 
+
+    p.add_header('Content-Disposition', "attachment; filename= %s" % filename) 
+
+    # attach the instance 'p' to instance 'msg' 
+    msg.attach(p) 
+
+    # creates SMTP session 
+    s = smtplib.SMTP('smtp.gmail.com', 587) 
+
+    # start TLS for security 
+    s.starttls() 
+
+    # Authentication 
+    senderPass = sPassVar.get()
+    s.login(fromaddr, senderPass) 
+
+    # Converts the Multipart msg into a string 
+    text = msg.as_string() 
+
+    # sending the mail 
+    s.sendmail(fromaddr, toaddr, text) 
+
+    # terminating the session 
+    s.quit() 
+ 
+
+b=Button(root, text='Send Email', command=lambda : send_email() , font='timesnewroman 10 bold', 
+         fg='dark green', relief=RAISED, bd=5, width=20)
+b.grid(row=12, column=0, columnspan=15, ipadx=20, 
+                   pady=40)
+ 
+# ************** input END *************************** 
+#input for email
+'''
+sender email
+password
+message
+reciever email
+'''
+
+ 
+root.mainloop()
+
+
+
