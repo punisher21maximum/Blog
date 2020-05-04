@@ -1,0 +1,19 @@
+import smtplib 
+
+# SMTP session , 587 port reserved for email
+s = smtplib.SMTP('smtp.gmail.com', 587) 
+
+# for security
+s.starttls() 
+
+# login to email 
+s.login("vishal7x7@gmail.com", "Maxeffort@21") 
+
+# msg
+message = "enter your message"
+
+# send email
+s.sendmail("vishal7x7@gmail.com", "vishal7x7@gmail.com", message) 
+
+# stop connection
+s.quit() 
