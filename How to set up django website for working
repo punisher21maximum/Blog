@@ -1,1 +1,46 @@
+For django 3
+s1 : install python
+s2 : install virtualenv
+s3 : create virtualenv
+s4 : activate virtualenv
+s5 : (inside activated virtualenv) - install django3
+s6 : start django project
+s7 : change directory to your site
+s8 : run website
+s9 : open browser and go to localhost:8000
 
+# s1 : install python3.6
+sudo apt-get install python3.6 #any python 3 is OK!
+
+# s2 : install virtual environment, for python3.6
+sudo pip3 install virtualenv 
+or 
+sudo python3 -m pip install virtualenv
+
+#s3 : create virtualenv, for your python version
+NOTE : go to the directory where you want to create the django project
+-p : install specific version of python
+/usr/bin/python3.6 : location of your python3.6 file
+venv : your virtual env name
+$ virtualenv -p /usr/bin/python3.6 venv #python3.x version same as installed
+
+#s4 : activate virtual environment
+$ source venv/bin/activate 
+or 
+$ cd venv $ . bin/activate $ cd ..
+
+#s5 : install django3
+sudo python3 -m pip install django==3.0.0
+
+#s6 : start django project
+myblogwebsite : your project folder name, not your website name that will later appear in your website
+$ django-admin startproject myblogwebsite
+
+#s7 : change directory to your site
+$ cd myblogwebsite
+
+#s8 : run website
+$ python3.6 manage.py runserver
+
+#s9 : open browser and go to localhost:8000
+http://localhost:8000/polls/
