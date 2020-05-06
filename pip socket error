@@ -1,0 +1,14 @@
+$ python3.6 -m pip --version
+ERROR :
+in file socket.py
+
+SOLUTION :
+I had created a socket.py file. Which is a name of module in python. 
+So when python try to import socket.py , it imports your created socket.py 
+and gets an error.
+
+So find socket.py file on your laptop
+rename or delete it.
+
+$ python3.6 -m pip --version
+NO ERROR
