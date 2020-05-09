@@ -1,0 +1,174 @@
+models.py 
+
+from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+from django.urls import reverse
+
+#post models
+
+class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    last_edit = models.DateTimeField(auto_now = True)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return self.topic + ' ' + self.content[:10]
+        
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk' : self.pk})
+        
+ class Preference(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    value = models.IntegerField(default=0)
+    date = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+      unique_together = ('user', 'post', 'value')
+      
+    def __str__(self):
+		    return str(self.user)+' : '+str(self.post)+' : '+str(self.value)
+        
+        
+ urls.py 
+ 
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('post/<int:pk>/preference/<int:userpreference>/', views.postpreference, name='postpreference' ),
+    
+views.py
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
+
+
+                    valueobj= obj.value #value of userpreference
+
+
+                    valueobj= int(valueobj)
+
+                    userpreference= int(userpreference)
+            
+                    if valueobj != userpreference:
+                            obj.delete()
+
+
+                            upref= Preference()
+                            upref.user= request.user
+
+                            upref.post= eachpost
+
+                            upref.value= userpreference
+
+
+                            if userpreference == 1 and valueobj != 1:
+                                    eachpost.likes += 1
+                                    eachpost.dislikes -=1
+                            elif userpreference == 2 and valueobj != 2:
+                                    eachpost.dislikes += 1
+                                    eachpost.likes -= 1
+                            
+
+                            upref.save()
+
+                            eachpost.save()
+                    
+                    
+                            context= {'eachpost': eachpost,
+                              'postid': postid}
+
+                            return render (request, 'blog/post_detail.html', context)
+
+                    elif valueobj == userpreference:
+                            obj.delete()
+                    
+                            if userpreference == 1:
+                                    eachpost.likes -= 1
+                            elif userpreference == 2:
+                                    eachpost.dislikes -= 1
+
+                            eachpost.save()
+
+                            context= {'eachpost': eachpost,
+                              'postid': postid}
+
+                            return render (request, 'blog/post_detail.html', context)
+                            
+                    
+    
+            
+            except Preference.DoesNotExist:
+                    upref= Preference()
+
+                    upref.user= request.user
+
+                    upref.post= eachpost
+
+                    upref.value= userpreference
+
+                    userpreference= int(userpreference)
+
+                    if userpreference == 1:
+                            eachpost.likes += 1
+                    elif userpreference == 2:
+                            eachpost.dislikes +=1
+
+                    upref.save()
+
+                    eachpost.save()                            
+
+
+                    context= {'eachpost': eachpost,
+                      'postid': postid}
+
+                    return render (request, 'blog/post_detail.html', context)
+
+
+    else:
+            eachpost= get_object_or_404(Post, id=postid)
+            context= {'eachpost': eachpost,
+                      'postid': postid}
+
+            return render (request, 'blog/post_detail.html', context)
+                      
+                  
+              
+ polls_detail.html
+ <!-- like -->
+
+<a href="#" onClick="document.getElementById('likebutton').submit()"><i class="fa fa-thumbs-up"> {{eachpost.likes}} </i></a> 
+    |
+<a href="#" onClick="document.getElementById('dislikebutton').submit()"><i class="fa fa-thumbs-down"> {{eachpost.dislikes}} </i></a> 
+
+
+
+<form id="likebutton" method="POST" action="/post/{{eachpost.id}}/preference/1/">
+{% csrf_token %}
+<input type="hidden">
+</form>
+
+<form id="dislikebutton" method="POST" action="/post/{{eachpost.id}}/preference/2/">
+{% csrf_token %}
+<input type="hidden">
+</form>
+
+    <!-- like end -->
+          
+      
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
