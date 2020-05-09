@@ -1,3 +1,4 @@
+http://www.learningaboutelectronics.com/Articles/How-to-add-like-dislike-buttons-to-a-post-Python-Django.php
 models.py 
 
 from django.db import models
