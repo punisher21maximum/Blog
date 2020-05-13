@@ -1,0 +1,9 @@
+import calendar as c
+
+month, day, year = [ int(i) for i in input().split()]
+
+weekday_i = c.weekday(year, month, day)
+
+weekday = c.day_name[weekday_i]
+
+print(weekday.upper())
