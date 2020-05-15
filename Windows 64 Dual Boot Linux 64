@@ -11,3 +11,53 @@ Requirements
 
 Step 1.
 Download ubuntu 20.04 
+
+Step 2.
+write iso image to PD
+
+Step 3 : create partition for Ubuntu 
+1.search : disk partitions
+2.shrink any of the drive's (lets say C/)
+![image](https://user-images.githubusercontent.com/49392224/82070820-e8310480-96f2-11ea-8237-fd7caf72e72f.png)
+Total size before shrink in MB : 215112
+Size of Available shrink space in MB : 38012
+Enter the amount of space to shrink in MB : 38021
+Total size after shrink in MB : 177091
+3.But I have 83.42GB unallocated space
+
+Step 4: try install
+1.turn off Laptop
+2.connect USB with Ubuntu iso image
+2.start using recovery key
+3.enter BIOS > install ubuntu
+4.do ubuntu installation steps : choose keyboard, country, partition etc
+
+
+Uninstall ubuntu from Dual Boot
+Step 1.remove ubuntu
+
+Step 2.remove grub bootloader
+1.enter windows menu
+  press shift key (keep it pressed) > restart Laptop > windows menu
+  
+  windows menu : Continue, Trouble Shoot, Turn off your PC
+  
+  Trouble shoot > Advance options > Command prompt > select account (gaurav7x7) > enter password 
+  
+  On command prompt :
+  X:\Sources>bootrec /fixmbr
+  
+  X:\Sources>bootrec /fixboot
+  
+  X:\Sources>bootrec /scanos
+
+
+
+
+
+
+
+
+
+
+
