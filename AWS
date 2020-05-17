@@ -8,3 +8,28 @@ region : AWS Infra P1
 1.has data center
 2.>1 avai zones (AZ) : each AZ copy of one another : 1 AZ destroyed still have all info on all other AZs'
 
+AWS cloud > regions > AZ > DataCenter
+
+
+EC2
+1.flexible
+2.create instances : pay : delete instance 
+3.configure : OS : Linux, ubuntu, Windows
+            :choose OS : choose AMI amazon machine image 
+4.AMI contain : configuration of instance : possible apps on that instance 
+5.1 AMI : Launch : multiple instance : all instance will share same configurations
+6.choose : instance 1)type and 2)size : these decide : amt of compute, memory, network capabilites
+
+Type of EC2
+: compute optimized, memory optimized, storage optimized, and more
+
+Modify
+:You can change type of EC2 later also if you realise other option is more suitable
+:resize instance
+:modify by clicks or programming or automate 
+
+------------------------------------------
+
+
+
+
