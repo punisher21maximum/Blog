@@ -62,13 +62,22 @@ Build VPC > inside it > build subnet > inside build > EC2
 
 To build VPC require : 1.region name 2.IP address range
 
+Build VPC and subnet:
+services > VPC
+on VPC dashboard > click Launch VPC wizard
+on <next page> > select
+Step 2: VPC with a Single Public Subnet : 
 
+IPv4 CIDR block:* 10.10.0.0/16
+VPC name: Directory VPC
 
+Public subnet's IPv4 CIDR:* 10.10.1.0/24
+Availability Zone:* us-east-2a #Note : origin in Top Right : ohio
 
-
-
-
-
+Theory : now we have created a VPC with subnet in it. Now if we have webserver inside subnet, no one can access it.
+To allow access to webserver inside VPC, we need a Internet Gate Way IGW. 
+Create an IGW > attatch it to VPC 
+Create routing table > associate to subnet
 
 
 
