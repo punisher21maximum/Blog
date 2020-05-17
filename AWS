@@ -180,6 +180,69 @@ Use VGW : virtual private gate way
 
 
 
+##################
+STORAGE ON AWS : Introduction to Storage on AWS
+
+Note : for a website
+            EC2 : block level storage :  
+            like html files
+            S3  : object level storage : update entire file for every single change
+            images, files, videos etc.
+            RDS : block level storage :  dont update entire file for every single change
+            user name and data, that is stored in columns in database
+
+
+Amazon Elastic Block Store (Amazon EBS)
+            EBS is created and can be attatched to en existing EC2
+            EBS can be accessed only by EC2
+            EBS life cycle independent of EC2 
+                        normally EBS connected to EC2
+                        So we can switch off/stop EC2 but EBS still work
+                        We can delete current EC2 ; create new EC2 ; attatch old EBS to it.
+                        
+            Each Amazon EBS volume is automatically replicated inside an Availability Zone to protect you from component failure
+            EBS 1)SSD-backed storage , 2)(HDD)-backed storage
+            Pricing : based on : 1] amount (volume) 2] type of Amazon EBS volume : that you provision
+
+
+video : Amazon Simple Storage Service (Amazon S3)
+            store : images, videos, files
+            unlimited volume
+            why realiable : 
+                        S3 offers 99.99% availability with 11 nines of durability
+                        store three copies of your data redundantly across AWS facilities within the Region that you selected
+            store : database or EBS snapshot
+
+S3 key concepts
+1]objects stored in buckets 
+2]bucket name unique accross all amazon accounts 
+            reason : object we store on bucket , that object has url that contain bucket name
+            example : bucket name - mybucket ; object name - pic.jpg
+                        now : bucket avai on http(s) and object avai on http(s)
+                        url : http://mybucket.s3.amazon.aws.com/pic.jpg
+
+S3 security
+object uploaded on bucket : by default private : allow access for : avai on http
+settings can be done for : access bucket and images
+You can control access to both the bucket and the objects (who can create, delete, and retrieve objects in the bucket)
+
+S3 storage limit
+bucket : no limit
+object : max 5TB
+
+S3 price 
+no minimum cost
+
+
+video : Amazon S3 Demonstration
+
+services > S3 
+click : create bucket : name unique-aws-bucket-1 : done
+click : bucket name (unique-aws-bucket-1) : click upload : choose file : done
+click : object name (file uploaded) : go to link : access denied
+go to (unique-aws-bucket-1) > permission > allow access (all access)
+go to (unique-aws-bucket-1) > overview > uploaded object > permissions > public > read > save
+
 
 
 
