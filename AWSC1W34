@@ -111,9 +111,25 @@ Stress is reduces
 newly created instance are deleted, and minimum 2 are maintained
 
 
+--------------------------------------------------------------------------------------------------------
+week5
 
+security
+shared respo model : some service respo of cloud and some of user
 
+user data
+app
+Guest OS : user choice to add security
+~~~~~~~~~
+hypervisor
+network
+physical
 
+COST : services > trusted advisor
+AWS Pricing Calculator : calculate Amazon EC2 and Amazon EBS pricing
+    AWS Simple Monthly Calculator : for others
+AWS Cost Explorer : reports , graphs 
+AWS Trusted Advisor : guidancec 
 
 
 
