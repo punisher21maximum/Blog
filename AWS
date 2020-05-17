@@ -30,6 +30,41 @@ Modify
 
 ------------------------------------------
 
+launch EC2 : Creating a (Web Server) Using Amazon EC2 
+1. Choose AMI 2. Choose Instance Type 3. Configure Instance 4. Add Storage 5. Add Tags 6. Configure Security Group 7. Review
+AWS services > search EC2 > click EC2 > EC2
+you reach here : EC2 dashboard : https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Home:
+1.click : launch instance
+2.choose AMI : Amazon Linux 2 AMI (HVM), SSD Volume Type #
+3.select instance type : t2 micro : Next to configure the instance details #
+4.select VPC : network : Note : coursera chose app vpc , I chose deafult
+select subnet : subnet : Note : coursera chose public , I chose deafult
+role : IAM role : Note : coursera chose instance role , I chose None
+advance details : at bottom of page : user data (as text) : these are commands that run once instance is launched #
+click : Next add storage
+5.Storage : leave to default : add tags #
+6.Tags : add tag : name value : Next to configure the security group #
+7.Step 6: Configure Security Group : already created : launch
+
+---------------creating instance
+click : view instances
+shows : list of instances : current one - running , checks
+from below : copy :  public IP address : paste in new browser tab and enter : shows : empty dir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
