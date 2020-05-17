@@ -47,12 +47,77 @@ connect EC2 instances to EBS
 When EC2 instance pushed to a limit : cloud watch is alerted 
 
 Demo :
+services > EC2 > left bar , at bottom > auto scaling groups
+Welcome to Auto Scaling : click : create auto scaling group
+step1 : set EC2 config : has all steps of EC2 instance
+step2 : set no of max EC2
+step1 : 
+1] choose AMI : Amazon Linux 2 AMI (HVM), SSD Volume Type
+2] choose instance type : t2 micro
+3] configure deatils : name - webserver : role - instance role : user data - copy paste code for start up , unzip zip files etc
+4] add storage : skip
+5] configire security group : select one
+6] review
 
+select key pair : later
+
+step2 : 
+1] create auto scaling group 
+launch config : 
+group name : webservers
+group size : 2 
+network : VPC1
+subnet : out of 4, select both public ones from VPC1
+
+Advance details : bcos we have created an ELB
+load balancing : checked
+classic load balancer :
+target groups : webservers
   
-  
-  
-  
-  
+2]scaling poilicies
+select radio : use scaling ...
+scale b/w 2 and 4 ...
+
+scale group size
+name : scale up 
+target value : 60 (%)
+instances need : 300
+
+3]configure notifications
+skip : optional
+
+4]configure tags
+skip
+
+5]review
+
+DONE--------------
+
+TEST
+
+Stress CPU for 10 min
+
+Now
+
+cloud watch : alarm summary : went >60% : launched 2 instances : load come down
+
+services > EC2 > left bar > target groups 
+select webservers > bottom > targets > 4 healthy targets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   
