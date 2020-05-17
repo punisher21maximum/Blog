@@ -52,7 +52,15 @@ shows : list of instances : current one - running , checks
 from below : copy :  public IP address : paste in new browser tab and enter : shows : empty dir
 
 
+light
+:https://lightsail.aws.amazon.com/ls/webapp/ap-south-1/instances/WordPress-1/connect
 
+----
+Networking AWS
+Amazon Virtual Private Cloud (VPC) Part 1
+Build VPC > inside it > build subnet > inside build > EC2 
+
+To build VPC require : 1.region name 2.IP address range
 
 
 
