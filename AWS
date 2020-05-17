@@ -236,15 +236,18 @@ no minimum cost
 
 video : Amazon S3 Demonstration
 
-services > S3 
-click : create bucket : name unique-aws-bucket-1 : done
-click : bucket name (unique-aws-bucket-1) : click upload : choose file : done
-click : object name (file uploaded) : go to link : access denied
-go to (unique-aws-bucket-1) > permission > allow access (all access)
-go to (unique-aws-bucket-1) > overview > uploaded object > permissions > public > read > save
+            services > S3 
+            click : create bucket : name unique-aws-bucket-1 : done
+            click : bucket name (unique-aws-bucket-1) : click upload : choose file : done
+            click : object name (file uploaded) : go to link : access denied
+            go to (unique-aws-bucket-1) > permission > allow access (all access)
+            go to (unique-aws-bucket-1) > overview > uploaded object > permissions > public > read > save
 
-
-
+video : Amazon Elastic File System (Amazon EFS)
+1 EBS for 1 EC2
+1 EFS for multiple EC2
+EFS can even connect to home computer : so you store data directly to EFS
+EFS does not live in 1 any particular subnet
 
 
 
