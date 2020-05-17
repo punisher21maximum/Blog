@@ -11,3 +11,48 @@ Amazon DynamoDB : nosql
 to use : only specify throughput ; no underlying hardware like in RDS 
 
 Demo 
+services > DynamoDB
+tables > create table
+  name : student
+  primary key : name
+  click : create
+
+
+week4
+video : Monitoring and Amazon CloudWatch
+collect data at 1 place : operate on data : cloud watch alarms
+example :
+  you are reported latency in website : you find and observe : CPU 95% used : ask admin to create new server to decrease load for other servers
+  : manual method : ppl bad exp
+  Cloud service : set trigger event : if usage >60% on servers for more than 5min : create new server : report to admin
+set alarms, visualize logs and metrics side-by-side, take automated actions, 
+troubleshoot operational issues, and discover insights to optimize your applications  
+  
+  
+video : Load Balancing
+EBS
+attatch EC2 to EBS : divide load
+if autoscaling on : then newly created EC2 also get equal traffic
+internal use : suppose you have many servers and many apps : put EBS in b/w them.
+
+ELB three types of load balancers that all feature the : high availability, automatic scaling, and robust security
+Application Load Balancer : layer 7 : based on content of request HTTP(S)
+Network Load Balancer  : layer 4 : based on IP protocol data : TCP 
+Classic Load Balancer : for multiple Amazon EC2 instances : operates at both the request level and the connection leve
+
+
+video : Auto Scaling
+EC2 instance created inside autoscaling group : idenitical instances : can launch as needed by Auto Scaling engine
+connect EC2 instances to EBS
+When EC2 instance pushed to a limit : cloud watch is alerted 
+
+Demo :
+
+  
+  
+  
+  
+  
+  
+  
+  
