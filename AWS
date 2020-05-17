@@ -1,0 +1,10 @@
+choosing region : AWS overview
+1.latency : closest
+2.cost
+3.complaiance : law restriction
+4.services : new service avai in region or not
+
+region : AWS Infra P1
+1.has data center
+2.>1 avai zones (AZ) : each AZ copy of one another : 1 AZ destroyed still have all info on all other AZs'
+
