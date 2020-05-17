@@ -79,9 +79,32 @@ To allow access to webserver inside VPC, we need a Internet Gate Way IGW.
 Create an IGW > attatch it to VPC 
 Create routing table > associate to subnet
 
+Create IGW 
+services > VPC
+on VPC dashboard > on left select > Internet Gateways 
+on Internet Gateways > click create internet Gateway > name : Directory Gateway > close
+on Internet Gateways : can see your gateway : Directory Gateway : Directory Gateway
 
+attatch IGW to VPC
+on Internet Gateways : select IGW (Directory Gateway) : click actions : select attatch VPC 
+Internet gateways > Attach to VPC : select your VPC (Directory VPC) from drop down : click Attatch
 
+Create Route Tables !
+services > VPC
+on VPC dashboard > on left select > Route Tables
+on Route Tables > click create Route Tables  
+name Tag : Public Route table 
+VPC : from drop down > select Directory VPC
+click : create
 
+on Route Tables > You can see your route table : Public Route table
+select : Public Route table : 
+at bottom you can see : Routes : you can see your IGW route
+add route for traffic from internet;
+click edit : Destination 0.0.0.0/0 : Target <hash key for Directory Gateway> : click save
+Note : 0.0.0.0/0 is traffic from internet
+at bottom you can see : subnet associations :  
+click edit : choose from dropdown from subnet1 : click save
 
 
 
