@@ -122,19 +122,71 @@ Create Database in subnet 2 : later videos
 -------------------------
 
 Now to create multiple AZs' (avai zones)
+
 Create 2 new subnets : 1 public and 1 private
 
-Create 2nd public subnet
-name tag : subnet2_public
-VPC : vpc-027f82a76a498d11b or VPC1
-Avai zones : us-west-2b
-IPv4 CIDR : 10.10.3.0/24
+            Create 2nd public subnet
+            name tag : subnet2_public
+            VPC : vpc-027f82a76a498d11b or VPC1
+            Avai zones : us-west-2b
+            IPv4 CIDR : 10.10.3.0/24
 
-Create 2nd private subnet
-name tag : subnet2_private
-VPC : vpc-027f82a76a498d11b or VPC1
-Avai zones : us-west-2b
-IPv4 CIDR : 10.10.4.0/24
+            Create 2nd private subnet
+            name tag : subnet2_private
+            VPC : vpc-027f82a76a498d11b or VPC1
+            Avai zones : us-west-2b
+            IPv4 CIDR : 10.10.4.0/24
+
+Now configure route table RT1 so internet traffic can be directed from IGW1 to subnet2_public also.
+
+            on Route Tables >  
+            select : RT1
+            at bottom you can see : subnet associations :  
+            click edit : choose from dropdown :subnet1_public is already checked : check subnet2_public also : click save
+
+Create an EC2 instance in subnet2_public || do later
+and change RDS (in subnet1_private) to a Multi-AZ RDS : || later videos
+RDS (in subnet1_private) : will have standby : in another AZ : (in subnet2_private)
+
+
+Now we have 2 AZ, so we user should be not be asked select which AZ to log in (subnet1_public or subnet2_public)
+EBS : elastic load balancer : Does not matter in which, AZ user login : traffic will always be distributed equally.
+
+Create EBS
+services > EC2 > on left side > scroll down to : load balancer
+load balancer > create load balancer
+select type > application load balancer (HTTP/HTTPS
+
+            Step 1: Configure Load Balancer
+            name : ELB1
+            VPC : VPC1
+            Availibility zones : //select zones and also select subnet for each zone
+            us-west-2a subnet1_public
+            us-west-2b subnet2_public
+            Step 2: Configure Security Settings : skip : 
+            Step 3: Configure Security Groups : select <your security group> , that allow access over HTTP : 
+            Step 4: Configure Routing
+            name : webserver
+            Step 5: Register Targets
+            At bottom select our two zones : click : add to register
+            They will move up 
+            Step 6: Review : create 
+
+load balancer > select ELB1 > at bottom see : DNS : copy paste and go in new tab 
+
+
+To access the database or subnetx_private. 
+Use VGW : virtual private gate way 
+
+
+
+
+
+
+
+
+
+
 
 
 
