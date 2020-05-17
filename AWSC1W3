@@ -1,0 +1,13 @@
+Introduction to Module 3: Databases
+
+Amazon RDS in Detail
+services > RDS 
+RDS > select engine > mySQL 
+choose use case > production
+Note:  for choosing use case : 1]dev : 1 AZ 2]production : many AZ
+
+
+Amazon DynamoDB : nosql
+to use : only specify throughput ; no underlying hardware like in RDS 
+
+Demo 
