@@ -106,5 +106,38 @@ Note : 0.0.0.0/0 is traffic from internet
 at bottom you can see : subnet associations :  
 click edit : choose from dropdown from subnet1 : click save
 
+                                                                                               Amazon Virtual Private Cloud (VPC) Part 2
+
+To store my database we create another subnet.
+Not connected to IGW : so no one can access it from internet.
+But subnet1 can access : bcos subnet1 and subnet2 are on same VPC
+
+Create subnet2_private 
+name : subnet2_private
+VPC : VPC1
+IPv4 cdr : 10.10.2.0/24
+
+Create Database in subnet 2 : later videos
+
+-------------------------
+
+Now to create multiple AZs' (avai zones)
+Create 2 new subnets : 1 public and 1 private
+
+Create 2nd public subnet
+name tag : subnet2_public
+VPC : vpc-027f82a76a498d11b or VPC1
+Avai zones : us-west-2b
+IPv4 CIDR : 10.10.3.0/24
+
+Create 2nd private subnet
+name tag : subnet2_private
+VPC : vpc-027f82a76a498d11b or VPC1
+Avai zones : us-west-2b
+IPv4 CIDR : 10.10.4.0/24
+
+
+
+
 
 
