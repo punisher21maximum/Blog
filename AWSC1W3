@@ -104,7 +104,11 @@ cloud watch : alarm summary : went >60% : launched 2 instances : load come down
 services > EC2 > left bar > target groups 
 select webservers > bottom > targets > 4 healthy targets
 
+Now 
 
+Stress is reduces 
+
+newly created instance are deleted, and minimum 2 are maintained
 
 
 
