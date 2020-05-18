@@ -1,0 +1,12 @@
+security and compliance
+
+shared model
+
+AWS respo : 
+        1.Security of the Cloud
+        2.any service that run on AWS cloud, S/W , H/W and networking.
+User respo : 
+        1.Guest OS (includes updates and security patches)
+        2.other App Software
+        3.configuring AWS security group Firewall
+        4.respo also depend on type of service user use
