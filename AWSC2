@@ -2,6 +2,7 @@ security and compliance
 
 shared model
 
+video : Shared Responsibility  
 AWS respo : 
         1.Security of the Cloud
         2.any service that run on AWS cloud, S/W , H/W and networking.
@@ -24,3 +25,47 @@ User respo :
                         3.classifying their assets
                         4.using IAM tools to apply the appropriate permissions
        
+
+
+video : Shared Responsibility Model
+
+AWS security services
+
+1. IAM : AWS Identity and Access Mgmt
+2. Amazon cognito
+
+Customer respo : customer data , platform application
+AWS respo : Compute, database, storage, networking ; AZ, region, edge location
+
+video :
+
+Best practice 
+1. understand rqmt
+2. establish envt to achieve rqmt
+3. undertand validation rqd for risk tolerence
+4. verification of envt
+
+
+video : 
+
+Data centre
+1.permiter layer : 
+2.Infrastructure Layer
+3.Data Layer
+4.Environmental Layer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
