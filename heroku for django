@@ -1,0 +1,9 @@
+procfile
+requirements.txt file
+
+1]
+settings.py : STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+2]
+Procfile : web: gunicorn myproject.wsgi
+3]
+settings.py : ALLOWED_HOSTS = ['*']
