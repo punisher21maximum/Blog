@@ -1,0 +1,191 @@
+what did we learn 25 Mar
+from YouTube CoreyMS
+Q1)what are raw strings?
+
+usual strings : follow backslash sequence
+print('Tab\tTab')
+>>>Tab	Tab
+raw strings : switch off backslash sequencing
+print(r'Tab\tTab')
+>>>Tab\tTab
+
+Q2)Meta characters?
+
+these are special characters - with special meaning in regex 
+list of meta characters : . ^ $ * + { } [ ] \ | ( ) 
+1) .   -->   matches a literally all characters except \n 
+2) [c-f]  -->  match range of c'ters. here, c to f ie. c, d, e, f
+3)^  -->  starts with 
+4)$  -->  end with 
+5)*  -->  0 or more c'ters 
+6)+  -->  1 or more c'ters 
+7){}  -->  exact no. of c'ters 
+8) |  -->  either or 
+9) \  -->  make it from meta c'ters to normal c'ter 
+eg    \.  -->  matches a literal .
+
+Note :
+1) . is meta c'ter : meaning - match all c'ters except \n 
+regex = r'coreyms.com'
+can match
+coreyms.com
+coreyms*com
+coreyms3com
+coreyms#com
+
+\. not a meta-c'ter now : match only .
+regex = r'coreyms\.com'
+can match
+coreyms.com
+
+Q3 Special Sequences?
+
+.   any c'ter except new line
+\d	numbers : (0-9)
+\D	Not a numbers : not (0-9) 
+\w	word c'ters : (a-z, A-Z, 0-9, _)
+\W	not word c'ters 
+\s  whitespace : (space, tab, newline)
+\S  not whitespace
+\b  word boundary
+\B  not word boundary
+^   starts with 
+$   end with 
+
+
+Q4 with file opener?
+
+with open('data.txt', 'r') as f:
+    contents = f.read()
+
+Q5 solve UnicodeDecodeError?
+
+with open('data.txt', 'r', encoding='utf-8') as f:
+    contents = f.read()
+
+Q6 characters set
+
+1)eg 
+    i) [-\.]  ii) [a-zA-Z0-9]
+2)match only one c'ter always
+3) - (DASH)  special meaning : two meaning
+    i)when used at start or end of c'ter set : literal -
+    eg [-\.]
+    ii)when used in b/w : range of c'ters
+    eg [a-zA-Z] 
+4) ^ : negates the set 
+i) ^  outside c'ter set : match beginning of string 
+eg r'^apple' : string starts with 'apple'
+ii)^  inside c'ter set : negates the set, match everything except c'ter set 
+eg [^a-z] : match e'thing except a-z 
+
+Q7 Quantifiers?
+*       zero or more
++       one or more
+?       zero or one 
+{3}     no of times - 3
+{3,5}   min and max no. of times - 3 to 5 
+
+Q8 groups
+1)eg
+(Mr|Ms|Mrs)
+2)you can apply groups on already matched regex w/o groups 
+r'https?://(www\.)?\w+\.\w+'
+r'https?://(www\.)?(\w+)(\.\w+)' 
+3)info from groups 
+for match in matches :
+          print(match.group(0)) 
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov 
+for match in matches :
+          print(match.group(1)) 
+www.
+None
+None
+www.
+for match in matches :
+          print(match.group(2))  
+google
+coreyms
+youtube
+nasa
+for match in matches :
+          print(match.group(3))  
+.com
+.com
+.com
+.gov
+
+4)subbed urls
+step 1 : create pattern - in which u make groups 
+step 2 : to that pattern pass a list of urls - to replace the values 
+subbed_urls = pattern.sub(r'\2\3', urls)
+google.com
+coreyms.com
+youtube.com
+nasa.gov
+
+Q9 Other than finditer 
+1)using regex 
+import re #lib
+text = 'something' #define txt 
+pattern = re.complile(regex) # regex = r'^start' 
+matches = pattern.finditer(pattern) 
+for match in matches : #print
+    print(match)
+
+
+2)
+i)finditer 
+--> return i)matched str ii)(start, stop)
+ii)findall
+--> if there are groups : 
+        return only matched string of group
+        (tuple for >1 group)
+    if zero groups :
+        return all matched strings 
+iii)match 
+--> match at start 
+iv)search 
+--> search in string 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
