@@ -1,0 +1,99 @@
+msg1='1010000'
+gen='1001'
+'''
+sending
+'''
+#add extra bits in msg
+msg=msg1+(len(gen)-1)*'0'
+print('start : ', msg, gen)
+#XOR func
+def XOR(msg, gen):
+          res=''
+          for i in range(len(msg)):
+                    if msg[i]==gen[i]: res+='0'
+                    else: res+='1'
+          if res.find('1') == -1:
+                    return '0'
+          else:
+                    res=res[res.index('1'):]
+          print('XOR', msg, gen)
+          print('res', res)
+          return res
+#main func : find remainder from sending msg and gen
+while True:
+          if len(msg[:len(gen)])<len(gen): break 
+          print('----------')
+          print('msg : ', msg, '\ngen : ', gen)
+          msg = XOR(msg[:len(gen)], gen) + msg[len(gen):]
+#ensuring remainder is len(gen)-1 bits long
+rem = msg
+rem = (len(gen)-1-len(rem))*'0' + rem
+print('sending msg   --->  ' , msg1, rem)
+'''
+receiving
+'''
+print('---------------receiving------------')
+received = msg1+rem
+while True:
+          if len(received[:len(gen)])<len(gen): break 
+          print('----------')
+          print('msg : ', received, '\ngen : ', gen)
+          received = XOR(received[:len(gen)], gen) + received[len(gen):]
+
+print('received rem: ', received)
+
+
+'''
+output ---------------------
+start :  1010000000 1001
+----------
+msg :  1010000000 
+gen :  1001
+XOR 1010 1001
+res 11
+----------
+msg :  11000000 
+gen :  1001
+XOR 1100 1001
+res 101
+----------
+msg :  1010000 
+gen :  1001
+XOR 1010 1001
+res 11
+----------
+msg :  11000 
+gen :  1001
+XOR 1100 1001
+res 101
+----------
+msg :  1010 
+gen :  1001
+XOR 1010 1001
+res 11
+sending msg   --->   1010000 011
+---------------receiving------------
+----------
+msg :  1010000011 
+gen :  1001
+XOR 1010 1001
+res 11
+----------
+msg :  11000011 
+gen :  1001
+XOR 1100 1001
+res 101
+----------
+msg :  1010011 
+gen :  1001
+XOR 1010 1001
+res 11
+----------
+msg :  11011 
+gen :  1001
+XOR 1101 1001
+res 100
+----------
+msg :  1001 
+gen :  1001
+received rem:  0
