@@ -1,0 +1,56 @@
+NOTE : delete or move your sqLite3 database to other folder outside project
+
+step1 : download latest postgres database
+
+step2 : create and activate virtual env
+windows
+py -3.6 -m pip env env_name
+env_name\Source\activate
+linux
+python36 -m pip virtualenv env_name
+env_name/bin/activate
+
+step 3 : install django
+windows
+py -3.6 -m pip install django==3.0
+linux
+python36 -m pip install django==3.0
+
+create project and all
+
+step 4:
+settings.py
+
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        
+        'NAME': 'database1',
+        'USER': 'postgres',
+        'PASSWORD': 'development',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+step 5 : search on windows/linux pgAdmin 
+in browser : http://127.0.0.1:51862/browser/ : pgAdmin opened : set password and all
+click on databases : create new database : give it the same name as for settings.py ('NAME': 'database1')
+
+step 6 : 
+py -3.6 manage.py makemigrations 
+py -3.6 manage.py migrate 
+py -3.6 manage.py runserver
+
+
+
+
+
+
+
+
+
