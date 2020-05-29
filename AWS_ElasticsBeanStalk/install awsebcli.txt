@@ -1,138 +1,21 @@
-Microsoft Windows [Version 10.0.18362.836]
-(c) 2019 Microsoft Corporation. All rights reserved.
+step 1 : install python 3.6 
 
-C:\Users\Administrator>eb
-'eb' is not recognized as an internal or external command,
-operable program or batch file.
+step 2 : Add Python 3.6 to PATH enviroonment variables
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36   # for including the python3.6
+C:\Users\Administrator\AppData\Roaming\Python\Python36\Scripts  # for including the extra items like 'eb' that you will have 
 
-C:\Users\Administrator>%HOMEPATH%\eb-virt\Scripts\activate
-
-(eb-virt) C:\Users\Administrator>eb
-'eb' is not recognized as an internal or external command,
-operable program or batch file.
-
-(eb-virt) C:\Users\Administrator>py -3.7  --version
-Python 3.7.3
-
-(eb-virt) C:\Users\Administrator>pip3 --version
-pip 20.1 from C:\Users\Administrator\eb-virt\lib\site-packages\pip (python 3.6)
-
-(eb-virt) C:\Users\Administrator>py -3.7 -m pip --version
-pip 19.0.3 from C:\Program Files\Python37\lib\site-packages\pip (python 3.7)
-
-(eb-virt) C:\Users\Administrator>deac
-'deac' is not recognized as an internal or external command,
-operable program or batch file.
-
-(eb-virt) C:\Users\Administrator>deactivate
-C:\Users\Administrator>awsebcli --version
-'awsebcli' is not recognized as an internal or external command,
-operable program or batch file.
-
-C:\Users\Administrator>aws
-usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
-To see help text, you can run:
-
-  aws help
-  aws <command> help
-  aws <command> <subcommand> help
-aws: error: the following arguments are required: command
-
-C:\Users\Administrator>where aws
-C:\Program Files\Python37\Scripts\aws
-C:\Program Files\Python37\Scripts\aws.cmd
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\aws
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\aws.cmd
-
-C:\Users\Administrator>py -3.6 pip install awsebcli --upgrade --user
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: can't open file 'pip': [Errno 2] No such file or directory
-
-C:\Users\Administrator>py -3.6 -m pip install awsebcli --upgrade --user
-Collecting awsebcli
-  Using cached https://files.pythonhosted.org/packages/13/c4/fbdbb9a6d0fb3f268240d0506c5b48bc31ee1bf0303f3f90fda81b149824/awsebcli-3.18.1.tar.gz
-Requirement already satisfied, skipping upgrade: botocore<1.16,>=1.15 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.15.49)
-Requirement already satisfied, skipping upgrade: cement==2.8.2 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.8.2)
-Requirement already satisfied, skipping upgrade: colorama<1.0,>=0.4 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (0.4.1)
-Requirement already satisfied, skipping upgrade: future<0.17.0,>=0.16.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.16.0)
-Requirement already satisfied, skipping upgrade: pathspec==0.5.9 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.5.9)
-Requirement already satisfied, skipping upgrade: python-dateutil<2.8.1,>=2.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.8.0)
-Requirement already satisfied, skipping upgrade: requests<2.21,>=2.20.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.20.1)
-Requirement already satisfied, skipping upgrade: setuptools>=20.0 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (40.6.2)
-Requirement already satisfied, skipping upgrade: semantic_version==2.5.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.5.0)
-Requirement already satisfied, skipping upgrade: six<1.12.0,>=1.11.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.11.0)
-Requirement already satisfied, skipping upgrade: termcolor==1.1.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.1.0)
-Requirement already satisfied, skipping upgrade: urllib3<1.25,>=1.24.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.24.3)
-Requirement already satisfied, skipping upgrade: wcwidth<0.2.0,>=0.1.7 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.1.9)
-Requirement already satisfied, skipping upgrade: PyYAML<5.4,>=5.3.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (5.3.1)
-Requirement already satisfied, skipping upgrade: pypiwin32==223 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (223)
-Requirement already satisfied, skipping upgrade: docutils<0.16,>=0.10 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from botocore<1.16,>=1.15->awsebcli) (0.15.2)
-Requirement already satisfied, skipping upgrade: jmespath<1.0.0,>=0.7.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from botocore<1.16,>=1.15->awsebcli) (0.9.5)
-Requirement already satisfied, skipping upgrade: certifi>=2017.4.17 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from requests<2.21,>=2.20.1->awsebcli) (2019.6.16)
-Requirement already satisfied, skipping upgrade: idna<2.8,>=2.5 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from requests<2.21,>=2.20.1->awsebcli) (2.7)
-Requirement already satisfied, skipping upgrade: chardet<3.1.0,>=3.0.2 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from requests<2.21,>=2.20.1->awsebcli) (3.0.4)
-Requirement already satisfied, skipping upgrade: pywin32>=223 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from pypiwin32==223->awsebcli) (227)
-Installing collected packages: awsebcli
-  Running setup.py install for awsebcli ... done
+step3 :
+#Note if you have multiple version of python installed on same PC (like I have python 2.7, python 3.6, python 3.7, python 3.8 ; weird but yeah)
+then you have to specify the file python version as below
+C:\Users\Administrator>py -3.6 -m pip install awsebcli --upgrade --user   
+Collecting awsebcli...
 Successfully installed awsebcli-3.18.1
-You are using pip version 18.1, however version 20.2b1 is available.
-You should consider upgrading via the 'python -m pip install --upgrade pip' command.
 
-C:\Users\Administrator>eb
-usage: eb (sub-commands ...) [options ...] {arguments ...}
-
-Welcome to the Elastic Beanstalk Command Line Interface (EB CLI).
-For more information on a specific command, type "eb {cmd} --help".
-
-commands:
-  abort        Cancels an environment update or deployment.
-  appversion   Listing and managing application versions
-  clone        Clones an environment.
-  codesource   Configures the code source for the EB CLI to use by default.
-  config       Modify an environment's configuration. Use subcommands to manage saved configurations.
-  console      Opens the environment in the AWS Elastic Beanstalk Management Console.
-  create       Creates a new environment.
-  deploy       Deploys your source code to the environment.
-  events       Gets recent events.
-  health       Shows detailed environment health.
-  init         Initializes your directory with the EB CLI. Creates the application.
-  labs         Extra experimental commands.
-  list         Lists all environments.
-  local        Runs commands on your local machine.
-  logs         Gets recent logs.
-  open         Opens the application URL in a browser.
-  platform     Commands for managing platforms.
-  printenv     Shows the environment variables.
-  restore      Restores a terminated environment.
-  scale        Changes the number of running instances.
-  setenv       Sets environment variables.
-  ssh          Opens the SSH client to connect to an instance.
-  status       Gets environment information and status.
-  swap         Swaps two environment CNAMEs with each other.
-  tags         Allows adding, deleting, updating, and listing of environment tags.
-  terminate    Terminates the environment.
-  upgrade      Updates the environment to the most recent platform version.
-  use          Sets default environment.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --debug               toggle debug output
-  --quiet               suppress all output
-  -v, --verbose         toggle verbose output
-  --profile PROFILE     use a specific profile from your credential file
-  -r REGION, --region REGION
-                        use a specific region
-  --no-verify-ssl       don't verify AWS SSL certificates
-  --version             show application/version info
-
-To get started type "eb init". Then type "eb create" and "eb open"
-
-C:\Users\Administrator>py -3.6 -m eb --version
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: No module named eb
-
-C:\Users\Administrator>py -3.6  eb --version
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: can't open file 'eb': [Errno 2] No such file or directory
-
+step4 :
 C:\Users\Administrator>eb --version
 EB CLI 3.18.1 (Python 3.6.8)
 
-C:\Users\Administrator>
+Trouble shoot : 
+configure the step 2 according to your PC
+step 3 : if you cant you python 3.6, then step 2 line 1 is done wrong
+step 4 : if you dont see eb not found, then step 2 line 2 is done wrong
