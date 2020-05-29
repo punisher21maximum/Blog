@@ -484,4 +484,738 @@ Quit the server with CTRL-BREAK.
 
 (eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip freeze > requirements.txt
 
+-----------------------------------------------------------------------------------------------------
+Microsoft Windows [Version 10.0.18362.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
 
+C:\Users\Administrator>%HOMEPATH%\eb-virt2\Scripts\activate
+
+(eb-virt2) C:\Users\Administrator>where django-admin
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.py
+
+(eb-virt2) C:\Users\Administrator>django-admin --version
+2.1.1
+
+(eb-virt2) C:\Users\Administrator>django-admin startproject ebdjango36
+
+(eb-virt2) C:\Users\Administrator>cd ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>dir
+ Volume in drive C is Windows10_OS
+ Volume Serial Number is FA5B-3B44
+
+ Directory of C:\Users\Administrator\ebdjango36
+
+05/29/2020  04:22 PM    <DIR>          .
+05/29/2020  04:22 PM    <DIR>          ..
+05/29/2020  04:22 PM    <DIR>          ebdjango36
+05/29/2020  04:22 PM               557 manage.py
+               1 File(s)            557 bytes
+               3 Dir(s)  36,656,394,240 bytes free
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>tree
+Folder PATH listing for volume Windows10_OS
+Volume serial number is FA5B-3B44
+C:.
+└───ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>ed ebdjango36
+'ed' is not recognized as an internal or external command,
+operable program or batch file.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>cd ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36\ebdjango36>tree
+Folder PATH listing for volume Windows10_OS
+Volume serial number is FA5B-3B44
+C:.
+No subfolders exist
+
+
+(eb-virt2) C:\Users\Administrator\ebdjango36\ebdjango36>cd ..
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>python manage.py runserver
+Traceback (most recent call last):
+  File "manage.py", line 8, in <module>
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 14, in <module>
+    ) from exc
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m manage.py runserver
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: Error while finding module specification for 'manage.py' (AttributeError: module 'manage' has no attribute '__path__')
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6  manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+May 29, 2020 - 16:25:19
+Django version 2.1.1, using settings 'ebdjango36.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[29/May/2020 16:28:09] "GET / HTTP/1.1" 200 16348
+[29/May/2020 16:28:09] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip freeze > requirements.txt
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip freeze
+aioredis==1.3.1
+appdirs==1.4.4
+asgiref==3.2.7
+astroid==2.2.5
+async-timeout==3.0.1
+attrs==19.3.0
+autobahn==20.4.2
+Automat==20.2.0
+autopep8==1.4.4
+awscli==1.18.68
+awsebcli==3.18.1
+blis==0.4.1
+boto==2.49.0
+boto3==1.12.41
+botocore==1.15.49
+cached-property==1.5.1
+catalogue==1.0.0
+cement==2.8.2
+certifi==2019.6.16
+cffi==1.14.0
+channels==2.4.0
+channels-redis==2.2.1
+chardet==3.0.4
+colorama==0.4.1
+constantly==15.1.0
+cryptography==2.9
+cymem==2.0.3
+daphne==2.5.0
+defusedxml==0.6.0
+distlib==0.3.0
+dj-database-url==0.5.0
+Django==2.1.1
+django-admin-autocomplete-filter==0.5
+django-allauth==0.41.0
+django-braces==1.14.0
+django-ckeditor==5.9.0
+django-cors-headers==3.2.1
+django-countries==6.0
+django-crispy-forms==1.9.1
+django-debug-toolbar==2.2
+django-filter==2.2.0
+django-filters==0.2.1
+django-heroku==0.3.1
+django-js-asset==1.2.2
+django-location-field==2.1.0
+django-mathfilters==1.0.0
+django-model-utils==4.0.0
+django-reset-migrations==0.4.0
+django-rest-auth==0.9.5
+django-rest-passwordreset==1.1.0
+django-simple-history==2.8.0
+django-social-share==1.4.0
+django-storages==1.9.1
+django-url-filter==0.3.13
+djangorestframework==3.10.2
+djangorestframework-jwt==1.11.0
+docutils==0.15.2
+docx2pdf==0.1.5
+emoji==0.5.4
+en-core-web-sm==2.2.5
+enum-compat==0.0.2
+facebook-sdk==3.1.0
+filelock==3.0.12
+future==0.16.0
+gunicorn==20.0.4
+hiredis==1.0.1
+httpie==1.0.2
+hyperlink==19.0.0
+idna==2.7
+importlib-metadata==1.6.0
+importlib-resources==1.5.0
+incremental==17.5.0
+isort==4.3.21
+jmespath==0.9.5
+lazy-object-proxy==1.4.1
+mccabe==0.6.1
+msgpack==0.5.6
+murmurhash==1.0.2
+numpy==1.18.4
+oauthlib==3.1.0
+pathspec==0.5.9
+Pillow==7.0.0
+plac==1.1.3
+preshed==3.0.2
+protobuf==3.12.0rc1
+psycopg2==2.8.4
+psycopg2-binary==2.8.4
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+Pygments==2.4.2
+PyHamcrest==2.0.2
+PyJWT==1.7.1
+pyOpenSSL==19.1.0
+pypiwin32==223
+pyshorteners==1.0.1
+python-dateutil==2.8.0
+python-dotenv==0.12.0
+python-social-auth==0.3.6
+python3-openid==3.1.0
+pytz==2019.1
+pywin32==227
+PyYAML==5.3.1
+requests==2.20.1
+requests-oauthlib==1.3.0
+rsa==3.4.2
+s3transfer==0.3.3
+semantic-version==2.5.0
+sentry-sdk==0.14.2
+service-identity==18.1.0
+six==1.11.0
+social-auth-core==3.3.3
+sorl-thumbnail==12.6.3
+spacy==2.2.4
+speedtest-cli==2.1.2
+sqlparse==0.3.0
+srsly==1.0.2
+termcolor==1.1.0
+thinc==7.4.0
+tqdm==4.46.0
+Twisted==20.3.0
+txaio==20.4.1
+typed-ast==1.4.0
+urllib3==1.24.3
+virtualenv==20.0.20
+virtualenvwrapper-win==1.2.6
+wasabi==0.6.0
+wcwidth==0.1.9
+whitenoise==5.0.1
+wincertstore==0.2
+wrapt==1.11.2
+zipp==3.1.0
+zope.interface==5.1.0
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>
+(eb-virt2) C:\Users\Administrator\ebdjango36>
+(eb-virt2) C:\Users\Administrator\ebdjango36>python
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pip
+>>> import os
+>>> import time
+>>> for package in pip.get_installed_distributions():
+...     print "%s: %s" % (package, time.ctime(os.path.getctime(package.location)))
+  File "<stdin>", line 2
+    print "%s: %s" % (package, time.ctime(os.path.getctime(package.location)))
+                 ^
+SyntaxError: invalid syntax
+>>> for package in pip.get_installed_distributions():
+...     print( "%s: %s" % (package, time.ctime(os.path.getctime(package.location))) )
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'pip' has no attribute 'get_installed_distributions'
+>>> from pip._internal.utils.misc import get_installed_distributions
+>>> for package in get_installed_distributions():
+...     print ("{}\t{}".format(time.ctime(os.path.getctime(package.location)), package))
+...
+Fri May 29 15:54:11 2020        wheel 0.34.2
+Fri May 29 15:54:11 2020        setuptools 46.1.3
+Fri May 29 15:54:11 2020        pip 20.1
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip freeze --local
+aioredis==1.3.1
+appdirs==1.4.4
+asgiref==3.2.7
+astroid==2.2.5
+async-timeout==3.0.1
+attrs==19.3.0
+autobahn==20.4.2
+Automat==20.2.0
+autopep8==1.4.4
+awscli==1.18.68
+awsebcli==3.18.1
+blis==0.4.1
+boto==2.49.0
+boto3==1.12.41
+botocore==1.15.49
+cached-property==1.5.1
+catalogue==1.0.0
+cement==2.8.2
+certifi==2019.6.16
+cffi==1.14.0
+channels==2.4.0
+channels-redis==2.2.1
+chardet==3.0.4
+colorama==0.4.1
+constantly==15.1.0
+cryptography==2.9
+cymem==2.0.3
+daphne==2.5.0
+defusedxml==0.6.0
+distlib==0.3.0
+dj-database-url==0.5.0
+Django==2.1.1
+django-admin-autocomplete-filter==0.5
+django-allauth==0.41.0
+django-braces==1.14.0
+django-ckeditor==5.9.0
+django-cors-headers==3.2.1
+django-countries==6.0
+django-crispy-forms==1.9.1
+django-debug-toolbar==2.2
+django-filter==2.2.0
+django-filters==0.2.1
+django-heroku==0.3.1
+django-js-asset==1.2.2
+django-location-field==2.1.0
+django-mathfilters==1.0.0
+django-model-utils==4.0.0
+django-reset-migrations==0.4.0
+django-rest-auth==0.9.5
+django-rest-passwordreset==1.1.0
+django-simple-history==2.8.0
+django-social-share==1.4.0
+django-storages==1.9.1
+django-url-filter==0.3.13
+djangorestframework==3.10.2
+djangorestframework-jwt==1.11.0
+docutils==0.15.2
+docx2pdf==0.1.5
+emoji==0.5.4
+en-core-web-sm==2.2.5
+enum-compat==0.0.2
+facebook-sdk==3.1.0
+filelock==3.0.12
+future==0.16.0
+gunicorn==20.0.4
+hiredis==1.0.1
+httpie==1.0.2
+hyperlink==19.0.0
+idna==2.7
+importlib-metadata==1.6.0
+importlib-resources==1.5.0
+incremental==17.5.0
+isort==4.3.21
+jmespath==0.9.5
+lazy-object-proxy==1.4.1
+mccabe==0.6.1
+msgpack==0.5.6
+murmurhash==1.0.2
+numpy==1.18.4
+oauthlib==3.1.0
+pathspec==0.5.9
+Pillow==7.0.0
+plac==1.1.3
+preshed==3.0.2
+protobuf==3.12.0rc1
+psycopg2==2.8.4
+psycopg2-binary==2.8.4
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+Pygments==2.4.2
+PyHamcrest==2.0.2
+PyJWT==1.7.1
+pyOpenSSL==19.1.0
+pypiwin32==223
+pyshorteners==1.0.1
+python-dateutil==2.8.0
+python-dotenv==0.12.0
+python-social-auth==0.3.6
+python3-openid==3.1.0
+pytz==2019.1
+pywin32==227
+PyYAML==5.3.1
+requests==2.20.1
+requests-oauthlib==1.3.0
+rsa==3.4.2
+s3transfer==0.3.3
+semantic-version==2.5.0
+sentry-sdk==0.14.2
+service-identity==18.1.0
+six==1.11.0
+social-auth-core==3.3.3
+sorl-thumbnail==12.6.3
+spacy==2.2.4
+speedtest-cli==2.1.2
+sqlparse==0.3.0
+srsly==1.0.2
+termcolor==1.1.0
+thinc==7.4.0
+tqdm==4.46.0
+Twisted==20.3.0
+txaio==20.4.1
+typed-ast==1.4.0
+urllib3==1.24.3
+virtualenv==20.0.20
+virtualenvwrapper-win==1.2.6
+wasabi==0.6.0
+wcwidth==0.1.9
+whitenoise==5.0.1
+wincertstore==0.2
+wrapt==1.11.2
+zipp==3.1.0
+zope.interface==5.1.0
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>
+(eb-virt2) C:\Users\Administrator\ebdjango36>
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip list --local
+Package                          Version
+-------------------------------- ---------
+aioredis                         1.3.1
+appdirs                          1.4.4
+asgiref                          3.2.7
+astroid                          2.2.5
+async-timeout                    3.0.1
+attrs                            19.3.0
+autobahn                         20.4.2
+Automat                          20.2.0
+autopep8                         1.4.4
+awscli                           1.18.68
+awsebcli                         3.18.1
+blis                             0.4.1
+boto                             2.49.0
+boto3                            1.12.41
+botocore                         1.15.49
+cached-property                  1.5.1
+catalogue                        1.0.0
+cement                           2.8.2
+certifi                          2019.6.16
+cffi                             1.14.0
+channels                         2.4.0
+channels-redis                   2.2.1
+chardet                          3.0.4
+colorama                         0.4.1
+constantly                       15.1.0
+cryptography                     2.9
+cymem                            2.0.3
+daphne                           2.5.0
+defusedxml                       0.6.0
+distlib                          0.3.0
+dj-database-url                  0.5.0
+Django                           2.1.1
+django-admin-autocomplete-filter 0.5
+django-allauth                   0.41.0
+django-braces                    1.14.0
+django-ckeditor                  5.9.0
+django-cors-headers              3.2.1
+django-countries                 6.0
+django-crispy-forms              1.9.1
+django-debug-toolbar             2.2
+django-filter                    2.2.0
+django-filters                   0.2.1
+django-heroku                    0.3.1
+django-js-asset                  1.2.2
+django-location-field            2.1.0
+django-mathfilters               1.0.0
+django-model-utils               4.0.0
+django-reset-migrations          0.4.0
+django-rest-auth                 0.9.5
+django-rest-passwordreset        1.1.0
+django-simple-history            2.8.0
+django-social-share              1.4.0
+django-storages                  1.9.1
+django-url-filter                0.3.13
+djangorestframework              3.10.2
+djangorestframework-jwt          1.11.0
+docutils                         0.15.2
+docx2pdf                         0.1.5
+emoji                            0.5.4
+en-core-web-sm                   2.2.5
+enum-compat                      0.0.2
+facebook-sdk                     3.1.0
+filelock                         3.0.12
+future                           0.16.0
+gunicorn                         20.0.4
+hiredis                          1.0.1
+httpie                           1.0.2
+hyperlink                        19.0.0
+idna                             2.7
+importlib-metadata               1.6.0
+importlib-resources              1.5.0
+incremental                      17.5.0
+isort                            4.3.21
+jmespath                         0.9.5
+lazy-object-proxy                1.4.1
+mccabe                           0.6.1
+msgpack                          0.5.6
+murmurhash                       1.0.2
+numpy                            1.18.4
+oauthlib                         3.1.0
+pathspec                         0.5.9
+Pillow                           7.0.0
+pip                              18.1
+plac                             1.1.3
+preshed                          3.0.2
+protobuf                         3.12.0rc1
+psycopg2                         2.8.4
+psycopg2-binary                  2.8.4
+pyasn1                           0.4.8
+pyasn1-modules                   0.2.8
+pycodestyle                      2.5.0
+pycparser                        2.20
+Pygments                         2.4.2
+PyHamcrest                       2.0.2
+PyJWT                            1.7.1
+pyOpenSSL                        19.1.0
+pypiwin32                        223
+pyshorteners                     1.0.1
+python-dateutil                  2.8.0
+python-dotenv                    0.12.0
+python-social-auth               0.3.6
+python3-openid                   3.1.0
+pytz                             2019.1
+pywin32                          227
+PyYAML                           5.3.1
+requests                         2.20.1
+requests-oauthlib                1.3.0
+rsa                              3.4.2
+s3transfer                       0.3.3
+semantic-version                 2.5.0
+sentry-sdk                       0.14.2
+service-identity                 18.1.0
+setuptools                       40.6.2
+six                              1.11.0
+social-auth-core                 3.3.3
+sorl-thumbnail                   12.6.3
+spacy                            2.2.4
+speedtest-cli                    2.1.2
+sqlparse                         0.3.0
+srsly                            1.0.2
+termcolor                        1.1.0
+thinc                            7.4.0
+tqdm                             4.46.0
+Twisted                          20.3.0
+txaio                            20.4.1
+typed-ast                        1.4.0
+urllib3                          1.24.3
+virtualenv                       20.0.20
+virtualenvwrapper-win            1.2.6
+wasabi                           0.6.0
+wcwidth                          0.1.9
+whitenoise                       5.0.1
+wincertstore                     0.2
+wrapt                            1.11.2
+zipp                             3.1.0
+zope.interface                   5.1.0
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>
+(eb-virt2) C:\Users\Administrator\ebdjango36>mkdir .ebextensions
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>code .
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>deactivate
+C:\Users\Administrator\ebdjango36>eb init -p python-3.6 django-tutorial
+
+C:\Users\Administrator\ebdjango36>eb create django-env
+Creating application version archive "app-200529_174031".
+Uploading django-tutorial/app-200529_174031.zip to S3. This may take a while.
+Upload Complete.
+ERROR: InvalidParameterValueError - Environment django-env already exists.
+
+C:\Users\Administrator\ebdjango36>eb create django-env36
+Creating application version archive "app-200529_174103".
+Uploading django-tutorial/app-200529_174103.zip to S3. This may take a while.
+Upload Complete.
+Environment details for: django-env36
+  Application name: django-tutorial
+  Region: us-west-2
+  Deployed Version: app-200529_174103
+  Environment ID: e-jkjupwxiy3
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.9.10
+  Tier: WebServer-Standard-1.0
+  CNAME: UNKNOWN
+  Updated: 2020-05-29 12:11:11.498000+00:00
+Printing Status:
+2020-05-29 12:11:10    INFO    createEnvironment is starting.
+2020-05-29 12:11:11    INFO    Using elasticbeanstalk-us-west-2-005082129062 as Amazon S3 storage bucket for environment data.
+2020-05-29 12:11:33    INFO    Created security group named: sg-0916885114847e971
+2020-05-29 12:11:48    INFO    Created load balancer named: awseb-e-j-AWSEBLoa-DCI7R65OUXZ4
+2020-05-29 12:11:49    INFO    Created security group named: awseb-e-jkjupwxiy3-stack-AWSEBSecurityGroup-2QFL59XP82KP
+2020-05-29 12:11:49    INFO    Created Auto Scaling launch configuration named: awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingLaunchConfiguration-153XH2U29I6LE
+2020-05-29 12:12:52    INFO    Created Auto Scaling group named: awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingGroup-NJ9NSMQ9IKU7
+2020-05-29 12:12:52    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
+2020-05-29 12:12:52    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:005082129062:scalingPolicy:4634462e-660e-4e9f-8da8-5e93d92fb584:autoScalingGroupName/awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingGroup-NJ9NSMQ9IKU7:policyName/awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingScaleDownPolicy-E7LCY5439BBT
+2020-05-29 12:12:53    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:005082129062:scalingPolicy:9abf7ad3-53b7-49a4-aacb-f8627771d2b9:autoScalingGroupName/awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingGroup-NJ9NSMQ9IKU7:policyName/awseb-e-jkjupwxiy3-stack-AWSEBAutoScalingScaleUpPolicy-RMRXKQN9H7HB
+2020-05-29 12:12:53    INFO    Created CloudWatch alarm named: awseb-e-jkjupwxiy3-stack-AWSEBCloudwatchAlarmLow-1M66SH5TLIZWG
+2020-05-29 12:12:53    INFO    Created CloudWatch alarm named: awseb-e-jkjupwxiy3-stack-AWSEBCloudwatchAlarmHigh-15N1H2AATIV0W
+2020-05-29 12:13:24    INFO    Application available at django-env36.eba-pmhnxbgb.us-west-2.elasticbeanstalk.com.
+2020-05-29 12:13:24    INFO    Successfully launched environment: django-env36
+
+
+C:\Users\Administrator\ebdjango36>eb status
+Environment details for: django-env
+  Application name: django-tutorial
+  Region: us-west-2
+  Deployed Version: app-200529_003643
+  Environment ID: e-k9cmeywsjj
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.7 running on 64bit Amazon Linux 2/3.0.1
+  Tier: WebServer-Standard-1.0
+  CNAME: django-env.eba-pmhnxbgb.us-west-2.elasticbeanstalk.com
+  Updated: 2020-05-28 19:10:07.929000+00:00
+  Status: Ready
+  Health: Red
+
+C:\Users\Administrator\ebdjango36>eb deploy
+Creating application version archive "app-200529_175043".
+Uploading django-tutorial/app-200529_175043.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:20:48    INFO    Environment update is starting.
+2020-05-29 12:21:28    INFO    Deploying new version to instance(s).
+2020-05-29 12:22:20    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:22:20    INFO    Environment update completed successfully.
+
+
+C:\Users\Administrator\ebdjango36>eb open
+
+C:\Users\Administrator\ebdjango36>eb deploy
+Creating application version archive "app-200529_175546".
+Uploading django-tutorial/app-200529_175546.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:25:52    INFO    Environment update is starting.
+2020-05-29 12:25:56    INFO    Deploying new version to instance(s).
+2020-05-29 12:26:17    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:26:17    INFO    Environment update completed successfully.
+
+
+C:\Users\Administrator\ebdjango36>eb status
+Environment details for: django-env
+  Application name: django-tutorial
+  Region: us-west-2
+  Deployed Version: app-200529_175546
+  Environment ID: e-k9cmeywsjj
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.7 running on 64bit Amazon Linux 2/3.0.1
+  Tier: WebServer-Standard-1.0
+  CNAME: django-env.eba-pmhnxbgb.us-west-2.elasticbeanstalk.com
+  Updated: 2020-05-29 12:26:17.900000+00:00
+  Status: Ready
+  Health: Red
+
+C:\Users\Administrator\ebdjango36>
+C:\Users\Administrator\ebdjango36>eb status django-env36
+Environment details for: django-env36
+  Application name: django-tutorial
+  Region: us-west-2
+  Deployed Version: app-200529_174103
+  Environment ID: e-jkjupwxiy3
+  Platform: arn:aws:elasticbeanstalk:us-west-2::platform/Python 3.6 running on 64bit Amazon Linux/2.9.10
+  Tier: WebServer-Standard-1.0
+  CNAME: django-env36.eba-pmhnxbgb.us-west-2.elasticbeanstalk.com
+  Updated: 2020-05-29 12:13:24.627000+00:00
+  Status: Ready
+  Health: Green
+
+C:\Users\Administrator\ebdjango36>eb deploy django-env36
+Creating application version archive "app-200529_180058".
+Uploading django-tutorial/app-200529_180058.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:31:02    INFO    Environment update is starting.
+2020-05-29 12:31:06    INFO    Deploying new version to instance(s).
+2020-05-29 12:31:23    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:31:23    INFO    Environment update completed successfully.
+
+
+C:\Users\Administrator\ebdjango36>eb open django-env36
+
+C:\Users\Administrator\ebdjango36>eb deploy django-env36
+Creating application version archive "app-200529_180602".
+Uploading django-tutorial/app-200529_180602.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:36:07    INFO    Environment update is starting.
+2020-05-29 12:36:11    INFO    Deploying new version to instance(s).
+2020-05-29 12:36:28    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:36:28    INFO    Environment update completed successfully.
+
+
+C:\Users\Administrator\ebdjango36>%HOMEPATH%\eb-virt2
+'\Users\Administrator\eb-virt2' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Administrator\ebdjango36>%HOMEPATH%\eb-virt2\Scripts\activate
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+May 29, 2020 - 18:08:59
+Django version 2.1.1, using settings 'ebdjango36.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 manage.py makemigrations
+No changes detected
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 manage.py createsuperuser
+Username (leave blank to use 'administrator'): vishal
+Email address: effort21pool@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 manage.py collectstatic
+
+119 static files copied to 'C:\Users\Administrator\ebdjango36\static'.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>eb deploy django-env36
+Creating application version archive "app-200529_181148".
+Uploading django-tutorial/app-200529_181148.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:42:04    INFO    Environment update is starting.
+2020-05-29 12:42:07    INFO    Deploying new version to instance(s).
+2020-05-29 12:42:24    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:42:25    INFO    Environment update completed successfully.
+
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>eb deploy django-env36
+Creating application version archive "app-200529_181823".
+Uploading django-tutorial/app-200529_181823.zip to S3. This may take a while.
+Upload Complete.
+2020-05-29 12:48:32    INFO    Environment update is starting.
+2020-05-29 12:49:12    INFO    Deploying new version to instance(s).
+2020-05-29 12:49:45    INFO    New application version was deployed to running EC2 instances.
+2020-05-29 12:49:45    INFO    Environment update completed successfully.
+
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>
