@@ -25,8 +25,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 (eb-virt2) C:\Users\Administrator>py -3.6 -m django --version
 2.1.1
 -------------------------------------------------------------------------------------
-C:\Python27
-C:\Python27\Scripts
+C:\Python27\Scripts : remove this from PATH.
 
 #Create a Django project
 s : activate venv 
@@ -35,12 +34,16 @@ C:\>%HOMEPATH%\eb-virt\Scripts\activate
 
 s : go to project folder
 (eb-virt2) C:\>cd Users
-
 (eb-virt2) C:\Users>cd Administrator
-
 (eb-virt2) C:\Users\Administrator>
 
-
+s : start project
+(eb-virt2) C:\Users\Administrator>django-admin startproject ebdjango36
+(eb-virt2) C:\Users\Administrator>cd ebdjango36
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6  manage.py runserver
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+ 
 
 
 
