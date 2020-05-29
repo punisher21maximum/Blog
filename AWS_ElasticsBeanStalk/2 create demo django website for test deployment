@@ -1,0 +1,46 @@
+s : create venv
+C:\>py -3.6 -m virtualenv %HOMEPATH%\eb-virt2
+created virtual environment CPython3.6.8.final.0-64 in 19398ms
+  creator CPython3Windows(dest=C:\Users\Administrator\eb-virt, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=C:\Users\Administrator\AppData\Local\pypa\virtualenv\seed-app-data\v1.0.1)
+  activators BashActivator,BatchActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+  
+s : activate venv  
+C:\>%HOMEPATH%\eb-virt2\Scripts\activate
+
+(eb-virt2) C:\>
+-----------------------------------------------------------------------------------
+s : activate venv  and Use pip to install Django
+(eb-virt2) C:\Users\Administrator>py -3.6 -m pip install django==2.1.1
+Requirement already satisfied: django==2.1.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (2.1.1)
+Requirement already satisfied: pytz in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from django==2.1.1) (2019.1)
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(eb-virt2) C:\Users\Administrator>py -3.6
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+>>>
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django --version
+2.1.1
+-------------------------------------------------------------------------------------
+C:\Python27
+C:\Python27\Scripts
+
+#Create a Django project
+s : activate venv 
+C:\>%HOMEPATH%\eb-virt\Scripts\activate
+(eb-virt) C:\>
+
+s : go to project folder
+(eb-virt2) C:\>cd Users
+
+(eb-virt2) C:\Users>cd Administrator
+
+(eb-virt2) C:\Users\Administrator>
+
+
+
+
+
