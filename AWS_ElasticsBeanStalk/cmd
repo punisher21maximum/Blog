@@ -1,0 +1,440 @@
+Microsoft Windows [Version 10.0.18362.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator>eb
+'eb' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Administrator>%HOMEPATH%\eb-virt\Scripts\activate
+
+(eb-virt) C:\Users\Administrator>eb
+'eb' is not recognized as an internal or external command,
+operable program or batch file.
+
+(eb-virt) C:\Users\Administrator>py -3.7  --version
+Python 3.7.3
+
+(eb-virt) C:\Users\Administrator>pip3 --version
+pip 20.1 from C:\Users\Administrator\eb-virt\lib\site-packages\pip (python 3.6)
+
+(eb-virt) C:\Users\Administrator>py -3.7 -m pip --version
+pip 19.0.3 from C:\Program Files\Python37\lib\site-packages\pip (python 3.7)
+
+(eb-virt) C:\Users\Administrator>deac
+'deac' is not recognized as an internal or external command,
+operable program or batch file.
+
+(eb-virt) C:\Users\Administrator>deactivate
+C:\Users\Administrator>awsebcli --version
+'awsebcli' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Administrator>aws
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: the following arguments are required: command
+
+C:\Users\Administrator>where aws
+C:\Program Files\Python37\Scripts\aws
+C:\Program Files\Python37\Scripts\aws.cmd
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\aws
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\aws.cmd
+
+C:\Users\Administrator>py -3.6 pip install awsebcli --upgrade --user
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: can't open file 'pip': [Errno 2] No such file or directory
+
+C:\Users\Administrator>py -3.6 -m pip install awsebcli --upgrade --user
+Collecting awsebcli
+  Using cached https://files.pythonhosted.org/packages/13/c4/fbdbb9a6d0fb3f268240d0506c5b48bc31ee1bf0303f3f90fda81b149824/awsebcli-3.18.1.tar.gz
+Requirement already satisfied, skipping upgrade: botocore<1.16,>=1.15 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.15.49)
+Requirement already satisfied, skipping upgrade: cement==2.8.2 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.8.2)
+Requirement already satisfied, skipping upgrade: colorama<1.0,>=0.4 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (0.4.1)
+Requirement already satisfied, skipping upgrade: future<0.17.0,>=0.16.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.16.0)
+Requirement already satisfied, skipping upgrade: pathspec==0.5.9 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.5.9)
+Requirement already satisfied, skipping upgrade: python-dateutil<2.8.1,>=2.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.8.0)
+Requirement already satisfied, skipping upgrade: requests<2.21,>=2.20.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.20.1)
+Requirement already satisfied, skipping upgrade: setuptools>=20.0 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (40.6.2)
+Requirement already satisfied, skipping upgrade: semantic_version==2.5.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (2.5.0)
+Requirement already satisfied, skipping upgrade: six<1.12.0,>=1.11.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.11.0)
+Requirement already satisfied, skipping upgrade: termcolor==1.1.0 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.1.0)
+Requirement already satisfied, skipping upgrade: urllib3<1.25,>=1.24.1 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (1.24.3)
+Requirement already satisfied, skipping upgrade: wcwidth<0.2.0,>=0.1.7 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (0.1.9)
+Requirement already satisfied, skipping upgrade: PyYAML<5.4,>=5.3.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from awsebcli) (5.3.1)
+Requirement already satisfied, skipping upgrade: pypiwin32==223 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from awsebcli) (223)
+Requirement already satisfied, skipping upgrade: docutils<0.16,>=0.10 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from botocore<1.16,>=1.15->awsebcli) (0.15.2)
+Requirement already satisfied, skipping upgrade: jmespath<1.0.0,>=0.7.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from botocore<1.16,>=1.15->awsebcli) (0.9.5)
+Requirement already satisfied, skipping upgrade: certifi>=2017.4.17 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from requests<2.21,>=2.20.1->awsebcli) (2019.6.16)
+Requirement already satisfied, skipping upgrade: idna<2.8,>=2.5 in c:\users\administrator\appdata\roaming\python\python36\site-packages (from requests<2.21,>=2.20.1->awsebcli) (2.7)
+Requirement already satisfied, skipping upgrade: chardet<3.1.0,>=3.0.2 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from requests<2.21,>=2.20.1->awsebcli) (3.0.4)
+Requirement already satisfied, skipping upgrade: pywin32>=223 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from pypiwin32==223->awsebcli) (227)
+Installing collected packages: awsebcli
+  Running setup.py install for awsebcli ... done
+Successfully installed awsebcli-3.18.1
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+C:\Users\Administrator>eb
+usage: eb (sub-commands ...) [options ...] {arguments ...}
+
+Welcome to the Elastic Beanstalk Command Line Interface (EB CLI).
+For more information on a specific command, type "eb {cmd} --help".
+
+commands:
+  abort        Cancels an environment update or deployment.
+  appversion   Listing and managing application versions
+  clone        Clones an environment.
+  codesource   Configures the code source for the EB CLI to use by default.
+  config       Modify an environment's configuration. Use subcommands to manage saved configurations.
+  console      Opens the environment in the AWS Elastic Beanstalk Management Console.
+  create       Creates a new environment.
+  deploy       Deploys your source code to the environment.
+  events       Gets recent events.
+  health       Shows detailed environment health.
+  init         Initializes your directory with the EB CLI. Creates the application.
+  labs         Extra experimental commands.
+  list         Lists all environments.
+  local        Runs commands on your local machine.
+  logs         Gets recent logs.
+  open         Opens the application URL in a browser.
+  platform     Commands for managing platforms.
+  printenv     Shows the environment variables.
+  restore      Restores a terminated environment.
+  scale        Changes the number of running instances.
+  setenv       Sets environment variables.
+  ssh          Opens the SSH client to connect to an instance.
+  status       Gets environment information and status.
+  swap         Swaps two environment CNAMEs with each other.
+  tags         Allows adding, deleting, updating, and listing of environment tags.
+  terminate    Terminates the environment.
+  upgrade      Updates the environment to the most recent platform version.
+  use          Sets default environment.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --debug               toggle debug output
+  --quiet               suppress all output
+  -v, --verbose         toggle verbose output
+  --profile PROFILE     use a specific profile from your credential file
+  -r REGION, --region REGION
+                        use a specific region
+  --no-verify-ssl       don't verify AWS SSL certificates
+  --version             show application/version info
+
+To get started type "eb init". Then type "eb create" and "eb open"
+
+C:\Users\Administrator>py -3.6 -m eb --version
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: No module named eb
+
+C:\Users\Administrator>py -3.6  eb --version
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: can't open file 'eb': [Errno 2] No such file or directory
+
+C:\Users\Administrator>eb --version
+EB CLI 3.18.1 (Python 3.6.8)
+
+C:\Users\Administrator>cd ..
+
+C:\Users>cd ..
+
+C:\>py -3.6 -m virtualenv %HOMEPATH%\eb-virt
+created virtual environment CPython3.6.8.final.0-64 in 19398ms
+  creator CPython3Windows(dest=C:\Users\Administrator\eb-virt, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=C:\Users\Administrator\AppData\Local\pypa\virtualenv\seed-app-data\v1.0.1)
+  activators BashActivator,BatchActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+C:\>py -3.6 -m %HOMEPATH%\eb-virt\Scripts\activate
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: No module named \Users\Administrator\eb-virt\Scripts\activate
+
+C:\>py -3.6  %HOMEPATH%\eb-virt\Scripts\activate
+  File "\Users\Administrator\eb-virt\Scripts\activate", line 5
+    if [ "${BASH_SOURCE-}" = "$0" ]; then
+                           ^
+SyntaxError: invalid syntax
+
+C:\>%HOMEPATH%\eb-virt\Scripts\activate
+
+(eb-virt) C:\>deactivate
+C:\>py -3.6  %HOMEPATH%\eb-virt2\Scripts\activate
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: can't open file '\Users\Administrator\eb-virt2\Scripts\activate': [Errno 2] No such file or directory
+
+C:\>py -3.6 -m virtualenv %HOMEPATH%\eb-virt2
+created virtual environment CPython3.6.8.final.0-64 in 685ms
+  creator CPython3Windows(dest=C:\Users\Administrator\eb-virt2, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=C:\Users\Administrator\AppData\Local\pypa\virtualenv\seed-app-data\v1.0.1)
+  activators BashActivator,BatchActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+C:\>%HOMEPATH%\eb-virt2\Scripts\activate
+
+(eb-virt2) C:\>py -3.6 -m pip install django==2.1.1
+Requirement already satisfied: django==2.1.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (2.1.1)
+Requirement already satisfied: pytz in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from django==2.1.1) (2019.1)
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(eb-virt2) C:\>cd Users
+
+(eb-virt2) C:\Users>cd Administrator
+
+(eb-virt2) C:\Users\Administrator>django-admin --version
+
+(eb-virt2) C:\Users\Administrator>
+
+
+(eb-virt2) C:\Users\Administrator>python
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'django'
+>>> ^Z
+KeyboardInterrupt
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator>django-admin.py --version
+
+(eb-virt2) C:\Users\Administrator>
+
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django-admin --version
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: No module named django-admin
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m pip freeze
+aioredis==1.3.1
+appdirs==1.4.4
+asgiref==3.2.7
+astroid==2.2.5
+async-timeout==3.0.1
+attrs==19.3.0
+autobahn==20.4.2
+Automat==20.2.0
+autopep8==1.4.4
+awscli==1.18.68
+awsebcli==3.18.1
+blis==0.4.1
+boto==2.49.0
+boto3==1.12.41
+botocore==1.15.49
+cached-property==1.5.1
+catalogue==1.0.0
+cement==2.8.2
+certifi==2019.6.16
+cffi==1.14.0
+channels==2.4.0
+channels-redis==2.2.1
+chardet==3.0.4
+colorama==0.4.1
+constantly==15.1.0
+cryptography==2.9
+cymem==2.0.3
+daphne==2.5.0
+defusedxml==0.6.0
+distlib==0.3.0
+dj-database-url==0.5.0
+Django==2.1.1
+django-admin-autocomplete-filter==0.5
+django-allauth==0.41.0
+django-braces==1.14.0
+django-ckeditor==5.9.0
+django-cors-headers==3.2.1
+django-countries==6.0
+django-crispy-forms==1.9.1
+django-debug-toolbar==2.2
+django-filter==2.2.0
+django-filters==0.2.1
+django-heroku==0.3.1
+django-js-asset==1.2.2
+django-location-field==2.1.0
+django-mathfilters==1.0.0
+django-model-utils==4.0.0
+django-reset-migrations==0.4.0
+django-rest-auth==0.9.5
+django-rest-passwordreset==1.1.0
+django-simple-history==2.8.0
+django-social-share==1.4.0
+django-storages==1.9.1
+django-url-filter==0.3.13
+djangorestframework==3.10.2
+djangorestframework-jwt==1.11.0
+docutils==0.15.2
+docx2pdf==0.1.5
+emoji==0.5.4
+en-core-web-sm==2.2.5
+enum-compat==0.0.2
+facebook-sdk==3.1.0
+filelock==3.0.12
+future==0.16.0
+gunicorn==20.0.4
+hiredis==1.0.1
+httpie==1.0.2
+hyperlink==19.0.0
+idna==2.7
+importlib-metadata==1.6.0
+importlib-resources==1.5.0
+incremental==17.5.0
+isort==4.3.21
+jmespath==0.9.5
+lazy-object-proxy==1.4.1
+mccabe==0.6.1
+msgpack==0.5.6
+murmurhash==1.0.2
+numpy==1.18.4
+oauthlib==3.1.0
+pathspec==0.5.9
+Pillow==7.0.0
+plac==1.1.3
+preshed==3.0.2
+protobuf==3.12.0rc1
+psycopg2==2.8.4
+psycopg2-binary==2.8.4
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+Pygments==2.4.2
+PyHamcrest==2.0.2
+PyJWT==1.7.1
+pyOpenSSL==19.1.0
+pypiwin32==223
+pyshorteners==1.0.1
+python-dateutil==2.8.0
+python-dotenv==0.12.0
+python-social-auth==0.3.6
+python3-openid==3.1.0
+pytz==2019.1
+pywin32==227
+PyYAML==5.3.1
+requests==2.20.1
+requests-oauthlib==1.3.0
+rsa==3.4.2
+s3transfer==0.3.3
+semantic-version==2.5.0
+sentry-sdk==0.14.2
+service-identity==18.1.0
+six==1.11.0
+social-auth-core==3.3.3
+sorl-thumbnail==12.6.3
+spacy==2.2.4
+speedtest-cli==2.1.2
+sqlparse==0.3.0
+srsly==1.0.2
+termcolor==1.1.0
+thinc==7.4.0
+tqdm==4.46.0
+Twisted==20.3.0
+txaio==20.4.1
+typed-ast==1.4.0
+urllib3==1.24.3
+virtualenv==20.0.20
+virtualenvwrapper-win==1.2.6
+wasabi==0.6.0
+wcwidth==0.1.9
+whitenoise==5.0.1
+wincertstore==0.2
+wrapt==1.11.2
+zipp==3.1.0
+zope.interface==5.1.0
+
+(eb-virt2) C:\Users\Administrator>
+(eb-virt2) C:\Users\Administrator>python
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'django'
+>>> ^X
+  File "<stdin>", line 1
+    
+    ^
+SyntaxError: invalid syntax
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator>py -2.7
+Python 2.7 not found!
+Installed Pythons found by py Launcher for Windows
+ (venv) *
+ -3.8-64
+ -3.7-64
+ -3.6-64
+
+Requested Python version (2.7) not installed, use -0 for available pythons
+
+(eb-virt2) C:\Users\Administrator>py -3.7
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'django'
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator>py -3.8
+Python 3.8.0 (tags/v3.8.0:fa919fd, Oct 14 2019, 19:37:50) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+>>>
+KeyboardInterrupt
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m pip install django==2.1.1
+Requirement already satisfied: django==2.1.1 in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (2.1.1)
+Requirement already satisfied: pytz in c:\users\administrator\appdata\local\programs\python\python36\lib\site-packages (from django==2.1.1) (2019.1)
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(eb-virt2) C:\Users\Administrator>py -3.6
+Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+>>> ^Z
+
+
+(eb-virt2) C:\Users\Administrator>django-admin.py --version
+
+(eb-virt2) C:\Users\Administrator>
+
+
+(eb-virt2) C:\Users\Administrator>where django-admin
+C:\Python27\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.py
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django-admin --version
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: No module named django-admin
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: Error while finding module specification for 'django-admin.py' (ModuleNotFoundError: No module named 'django-admin')
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django --version
+2.1.1
+
+(eb-virt2) C:\Users\Administrator>py -3.6 -m django django-admin --version
+No Django settings specified.
+Unknown command: 'django-admin'
+Type 'python -m django help' for usage.
+
+(eb-virt2) C:\Users\Administrator>django-admin==2.1.1 --version
+
+(eb-virt2) C:\Users\Administrator>
+
+(eb-virt2) C:\Users\Administrator>where django
+INFO: Could not find files for the given pattern(s).
+
+(eb-virt2) C:\Users\Administrator>where django-admin
+C:\Python27\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.py
+
+(eb-virt2) C:\Users\Administrator>
