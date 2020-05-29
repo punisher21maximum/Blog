@@ -77,52 +77,7 @@ Successfully installed awsebcli-3.18.1
 You are using pip version 18.1, however version 20.2b1 is available.
 You should consider upgrading via the 'python -m pip install --upgrade pip' command.
 
-C:\Users\Administrator>eb
-usage: eb (sub-commands ...) [options ...] {arguments ...}
 
-Welcome to the Elastic Beanstalk Command Line Interface (EB CLI).
-For more information on a specific command, type "eb {cmd} --help".
-
-commands:
-  abort        Cancels an environment update or deployment.
-  appversion   Listing and managing application versions
-  clone        Clones an environment.
-  codesource   Configures the code source for the EB CLI to use by default.
-  config       Modify an environment's configuration. Use subcommands to manage saved configurations.
-  console      Opens the environment in the AWS Elastic Beanstalk Management Console.
-  create       Creates a new environment.
-  deploy       Deploys your source code to the environment.
-  events       Gets recent events.
-  health       Shows detailed environment health.
-  init         Initializes your directory with the EB CLI. Creates the application.
-  labs         Extra experimental commands.
-  list         Lists all environments.
-  local        Runs commands on your local machine.
-  logs         Gets recent logs.
-  open         Opens the application URL in a browser.
-  platform     Commands for managing platforms.
-  printenv     Shows the environment variables.
-  restore      Restores a terminated environment.
-  scale        Changes the number of running instances.
-  setenv       Sets environment variables.
-  ssh          Opens the SSH client to connect to an instance.
-  status       Gets environment information and status.
-  swap         Swaps two environment CNAMEs with each other.
-  tags         Allows adding, deleting, updating, and listing of environment tags.
-  terminate    Terminates the environment.
-  upgrade      Updates the environment to the most recent platform version.
-  use          Sets default environment.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --debug               toggle debug output
-  --quiet               suppress all output
-  -v, --verbose         toggle verbose output
-  --profile PROFILE     use a specific profile from your credential file
-  -r REGION, --region REGION
-                        use a specific region
-  --no-verify-ssl       don't verify AWS SSL certificates
-  --version             show application/version info
 
 To get started type "eb init". Then type "eb create" and "eb open"
 
@@ -438,3 +393,95 @@ C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-adm
 C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.py
 
 (eb-virt2) C:\Users\Administrator>
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Microsoft Windows [Version 10.0.18362.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator>%HOMEPATH%\eb-virt2\Scripts\activate
+
+(eb-virt2) C:\Users\Administrator>where django-admin
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\django-admin.py
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.exe
+C:\Users\Administrator\AppData\Local\Programs\Python\Python38\Scripts\django-admin.py
+
+(eb-virt2) C:\Users\Administrator>django-admin --version
+2.1.1
+
+(eb-virt2) C:\Users\Administrator>django-admin startproject ebdjango36
+
+(eb-virt2) C:\Users\Administrator>cd ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>dir
+ Volume in drive C is Windows10_OS
+ Volume Serial Number is FA5B-3B44
+
+ Directory of C:\Users\Administrator\ebdjango36
+
+05/29/2020  04:22 PM    <DIR>          .
+05/29/2020  04:22 PM    <DIR>          ..
+05/29/2020  04:22 PM    <DIR>          ebdjango36
+05/29/2020  04:22 PM               557 manage.py
+               1 File(s)            557 bytes
+               3 Dir(s)  36,656,394,240 bytes free
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>tree
+Folder PATH listing for volume Windows10_OS
+Volume serial number is FA5B-3B44
+C:.
+└───ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>ed ebdjango36
+'ed' is not recognized as an internal or external command,
+operable program or batch file.
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>cd ebdjango36
+
+(eb-virt2) C:\Users\Administrator\ebdjango36\ebdjango36>tree
+Folder PATH listing for volume Windows10_OS
+Volume serial number is FA5B-3B44
+C:.
+No subfolders exist
+
+
+(eb-virt2) C:\Users\Administrator\ebdjango36\ebdjango36>cd ..
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>python manage.py runserver
+Traceback (most recent call last):
+  File "manage.py", line 8, in <module>
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 14, in <module>
+    ) from exc
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m manage.py runserver
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe: Error while finding module specification for 'manage.py' (AttributeError: module 'manage' has no attribute '__path__')
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6  manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+May 29, 2020 - 16:25:19
+Django version 2.1.1, using settings 'ebdjango36.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[29/May/2020 16:28:09] "GET / HTTP/1.1" 200 16348
+[29/May/2020 16:28:09] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[29/May/2020 16:28:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+
+(eb-virt2) C:\Users\Administrator\ebdjango36>py -3.6 -m pip freeze > requirements.txt
+
+
