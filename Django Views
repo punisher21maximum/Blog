@@ -1,0 +1,57 @@
+How to pass extra content to ListView?
+
+You have to override the "get_context_data(self, **kwargs)" function.
+And between #start and #end you can modify the context dictionary.
+
+class BikeListView(ListView):
+    model = Bike
+    template_name = 'blog/bike_list.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+    def get_context_data(self, **kwargs):
+        #start
+        context = super().get_context_data(**kwargs)
+        context['class_name'] = 'Bike'
+        #end
+        return context
+        
+        
+How to pass the "model name" to ListView/DetailView in URL?
+
+1. urls.py : 
+path('<str:model>/', SubcatListView.as_view(), name='subcat-list'),
+
+2. views.py : ListView :
+from .models import Post, Bike, Scooty, Bicycle, Mobile
+
+model_dict = {
+    "Post":Post, 
+    "Bike":Bike, 
+    "Scooty":Scooty, 
+    "Bicycle":Bicycle, 
+    "Mobile":Mobile
+    }
+    
+class SubcatListView(ListView):
+
+    template_name = 'blog/subcat_list.html'  # <app>/<model>_<viewtype>.html
+
+    """overriding "dispatch" func to set model passed as arg in URL"""
+    def dispatch(self, request, *args, **kwargs):
+        self.model = model_dict[kwargs.get('model', None)]
+        return super(SubcatListView, self).dispatch(request, *args, **kwargs)
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
