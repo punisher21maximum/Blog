@@ -1,0 +1,36 @@
+Usual :
+class BikeListView(ListView):
+     model = Post
+     template_name = 'blog/bike_list.html'  
+
+1.Pass model name from URL to model_list.html by ModelListView
+Ans.
+urls.py
+    path('<str:model>/', SubcatListView.as_view(), name='subcat-list'), 
+    #http://127.0.0.1:8000/Bike/
+    #http://127.0.0.1:8000/Scooty/
+    #http://127.0.0.1:8000/Mobile/
+    #{% url 'subcat-list' model='Bike' %}
+    #{% url 'subcat-list' model='Scooty' %}
+views.py
+class SubcatListView(ListView):
+
+    template_name = 'blog/subcat_list.html'  # <app>/<model>_<viewtype>.html
+
+    def get_context_data(self, **kwargs):
+        """override "get_context_data" to pass model_name to subcat_list.html"""
+        context = super().get_context_data(**kwargs)
+        context['class_name'] = kwargs.get('model', None)
+        return context
+ subcat_list.html
+            <!-- common fields -->
+            
+            <!-- details Unique --> 
+            {% if class_name  == "Bike" %}
+                {% include "blog/bike_list2.html" %}
+            {% elif class_name  == "Scooty" %}
+                {% include "blog/scooty_list2.html" %}
+            {% elif class_name  == "Mobile" %}
+                {% include "blog/mobile_list2.html" %}
+            {% endif %}          
+            <!-- details Unique end -->
