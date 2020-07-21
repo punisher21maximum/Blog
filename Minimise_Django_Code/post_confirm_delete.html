@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load google_analytics_tags %}
+<div style="display:none">
+    <img src="{% google_analytics %}" width="0" height="0" />
+</div>
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <h2>Are you sure you want to delete the post</h2>
+            
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                {% if class_name  == "Bike" %}
+                <a class="btn btn-outline-secondary" href="{% url 'subcat-detail' pk=object.id model='Bike' %}">Cancel</a>
+                {% elif class_name  == "Scooty" %}
+                <a class="btn btn-outline-secondary" href="{% url 'subcat-detail' pk=object.id model='Scooty' %}">Cancel</a>
+                {% elif class_name  == "Mobile" %}
+                <a class="btn btn-outline-secondary" href="{% url 'subcat-detail' pk=object.id model='Mobile' %}">Cancel</a>
+                {% endif %}            
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+

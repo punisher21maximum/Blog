@@ -1,0 +1,83 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load myfilters %}
+{% load google_analytics_tags %}
+<div style="display:none">
+    <img src="{% google_analytics %}" width="0" height="0" />
+</div>
+
+{% block content %}
+
+  <div class="row px-5" >
+    {% for post in posts %}
+<!-- card -->
+ 
+      <div class="card m-2 rounded-0 card_shadow " style="width: 18rem; ">
+        <!-- images -->
+        {% if class_name  == "Bike" %}
+          <a class="article-title" href="{% url 'subcat-detail' pk=post.id model='Bike' %}"> 
+        {% elif class_name  == "Scooty" %}
+        <a class="article-title" href="{% url 'subcat-detail' pk=post.id model='Scooty' %}"> 
+        {% elif class_name  == "Mobile" %}
+        <a class="article-title" href="{% url 'subcat-detail' pk=post.id model='Mobile' %}"> 
+        {% endif %} 
+          <img class="d-block w-100" src="{{ post.img1.url }}" height="250px;" alt="First slide">
+        </a>
+
+        <!-- images end -->
+        <div class="p-3">
+
+            <h5>Rs {{post.sell_price}}/-</h5> 
+            <!-- <small>{{post.date_posted|date:"M t, Y"}}</small> -->
+            <h7>{{post.title}}</h7>
+            <small> - {{post.desc|truncatechars:65}}</small>
+
+            <!-- price  -->
+            <table class="table table-hover mb-0" style="font-size: 12px;">
+              <tbody>
+                <tr>
+                  <th>Month</th>
+                  <td>{{post.rent_month}}/-</td>
+                  <th>Week</th>
+                  <td>{{post.rent_week}}/-</td>
+                </tr>
+                <tr>
+                  <th>Day</th>
+                  <td>{{post.rent_week}}/-</td>
+                  <th>Hour</th>
+                  <td>{{post.rent_hour}}/-</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- price end  -->
+ 
+            <!-- details Unique --> 
+            {% if class_name  == "Bike" %}
+                {% include "blog/bike_list2.html" %}
+            {% elif class_name  == "Scooty" %}
+                {% include "blog/scooty_list2.html" %}
+            {% elif class_name  == "Mobile" %}
+                {% include "blog/mobile_list2.html" %}
+            {% endif %}          
+            <!-- details Unique end -->
+
+            <small>{{post.author.profile.phone_number}}, {{ post.author.profile.society }},
+                {{ post.author.profile.bldg }}, {{ post.author.profile.floor }}0{{ post.author.profile.flat_no }}</small>
+        </div>
+        
+            
+      </div>
+        
+<!-- card end -->
+
+    {% endfor %}
+  </div>
+<!-- pagination start -->
+  <div class="my-4">
+    {% if is_paginated %}
+      {% include "blog/page_nav.html" %}
+    {% endif %}
+  </div>
+<!-- pagination end -->    
+{% endblock content %}
+ 
