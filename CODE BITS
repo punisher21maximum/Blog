@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+int main(void) {
+	int i, j, k, T; char ip[50]; int N1, N2, N3;
+	char s1[30]="hello ", s2[30]="Adam123ASmith";
+	strncpy(s1, s2, 5);
+    char * p = s2;
+    while(*p!='\0')
+	{
+	    printf("%d\n", isdigit(*p)); p++;
+	}
+	
+	return 0;
+}
+
+
+https://en.wikibooks.org/wiki/C_Programming/String_manipulation
+strcat - concatenate two strings
+strchr - string scanning operation
+strcmp - compare two strings
+strcpy - copy a string
+strlen - get string length
+strncat - concatenate one string with part of another
+strncmp - compare parts of two strings
+strncpy - copy part of a string
+strrchr - string scanning operation
+
+isdigit, isalpha, isalnum
+
+
+-------------
+Read space separated N input integers from terminal
+
+	    int N;
+      scanf("%d", &N);
+	    int arr[N]; char ch;
+	    for(j=0; j<N; j++)
+	    {
+	        scanf("%d%c", &arr[j], ch);
+	    }
+	    for(j=0; j<N; j++)
+	    {
+	        printf("%d ", arr[j]);
+	    }
+	    
+	    
